@@ -41,9 +41,12 @@
         <a class="nav-link" href="?page=forum">Fórum</a>
       </li>
       -->
+      
     </ul>  
     <ul class="nav navbar-nav navbar-right mr-5">
-      
+    <li class="nav-item">
+      <a href="?page=sobre" class="nav-link">Equipe <i class="fas fa-users"></i></a>
+    </li>
     <?php
         if($_GET['page'] != 'EscolhaCadastro')
         {
