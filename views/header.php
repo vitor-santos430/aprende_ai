@@ -48,7 +48,7 @@
         if($_GET['page'] != 'EscolhaCadastro')
         {
       ?>
-      <li><a class="nav-link" id="nav-link-margin" href="?page=EscolhaCadastro">Cadastre-se</a></li>
+      <li><a class="nav-link" id="nav-link-margin" href="?page=EscolhaCadastro">Cadastre-se <i class="fas fa-user-plus"></i> </a></li>
       <?php
         }
       ?>
@@ -57,7 +57,7 @@
         if($_GET['page'] != 'login')
         {
       ?>
-      <li><a class="nav-link"  href="?page=login">Login <i class="fas fa-sign-in-alt text-warning text-light"></i></a></li>
+      <li><a class="nav-link"  href="?page=login">Login <i class="fas fa-sign-in-alt"></i></a></li>
       <?php
         }
       ?>

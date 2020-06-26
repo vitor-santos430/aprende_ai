@@ -103,9 +103,9 @@
           Minha Conta
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="?page=minha_conta">Meu Perfil</a>
+          <a class="dropdown-item" href="?page=minha_conta">Meu Perfil <i class="fas fa-user"></i> </a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="?page=home">Sair <i class="fas fa-sign-out-alt text-light"></i> </a>
+          <a class="dropdown-item" href="?page=home">Sair <i class="fas fa-sign-out-alt "></i> </a>
         </div>
       </li>
     </ul>
