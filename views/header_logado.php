@@ -12,7 +12,7 @@
  <style>
    /* Style the navbar */
 #navbar {
-  overflow: hidden;
+  
   background-color: #333;
 }
 
