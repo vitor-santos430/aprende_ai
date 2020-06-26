@@ -1,0 +1,81 @@
+
+    .sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 60px;
+    left: 0;
+    background-color: #343a40; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    }
+
+
+    /* The navigation menu links */
+    .sidenav button{
+    border: none;
+    background-color: #343A40;
+    min-width: 300px;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #eeebeb;
+    display: block;
+    transition: 0.3s;
+    text-align: justify;
+
+
+    }
+
+    /* When you mouse over the navigation links, change their color */
+    .sidenav button:hover {
+    color: #f87b07;
+    }
+
+    /* Position and style the close button (top right corner) */
+    .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 30px;
+    margin-left: 50px;
+    font-weight: bold;
+    }
+
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+    transition: margin-left .5s;
+    padding-left:15%;
+    text-align: justify;
+    }
+
+    /*Parâmetros da imagem*/
+    .img{
+    text-align: center;
+    page-break-after: auto;
+    }
+
+    #titulo{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .margem{
+    margin-top: 20px;
+    }
+
+    .icone {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin-left: 20px;
+    margin-top: 5px;
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav button {font-size: 18px;}
+    }

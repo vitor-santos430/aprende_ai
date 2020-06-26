@@ -1,0 +1,52 @@
+.card{
+  margin-top: 50px;
+}
+
+.display-3{
+  font-size: 35px;
+  margin-top: 30px;
+}
+
+.col-sm-2{
+  margin-left: 110px;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    bottom: 0;  
+    z-index: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    color: #ee9a13;
+    text-align: center;
+    background-color: #ee9a13;
+    opacity: 0.5;
+    transition: opacity cubic-bezier(0.25, 0.1, 0.04, 1.14);
+    transition-delay: 0s;
+    border-radius: 20px;
+}
+
+
+.carousel-control-next {
+  left: 92%;
+}
+
+.carousel-control-prev {
+  left: 3%;
+}
+
+#img_card{
+  width: 18rem;
+  height: 6rem;
+}
+#UltimoCard{
+  width: 69rem;
+  height: 20rem;
+}

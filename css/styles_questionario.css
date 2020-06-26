@@ -1,0 +1,70 @@
+*  {
+    margin:100px;
+    padding:0;
+}
+html{
+  display: block;
+}
+
+html, body {
+  top: 70px;
+  height:100%;
+
+
+}
+
+body {
+  margin: 0;
+  font: 20px  Arial, Helvetica, sans-serif;
+  width:100%;
+}
+
+
+label {
+  font: bold 20px  Arial, Helvetica, sans-serif;
+}
+
+form {
+    margin: 100px 80px;
+    padding: 1em;
+
+}
+
+h1{
+    color: #ffcc00;
+    padding: 12px;
+
+}
+
+input{
+  margin: 10px 0 0 0;
+}
+
+
+/*BOTÃO DE ENVIAR*/
+
+.botao input {
+ margin-bottom: 70px;
+  overflow: hidden;
+  border: solid;
+  color: #ffcc00;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 4px;
+  width: 100px;
+  height: 30px;
+
+
+}
+
+
+/* Change the background color on mouse-over */
+.botao input:hover {
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-size: 25px;
+
+
+}

@@ -1,0 +1,26 @@
+.header {
+  overflow: hidden;
+  background-color: #fdfdfd;
+  padding: 20px 0px 0px 10px;
+  border-bottom: solid 1px #ffcc00;
+  position: fixed;
+  width: 100%;
+
+}
+
+#navbarSupportedContent a{
+  color: #fdfdfd;
+}
+
+#navbarSupportedContent button{
+  color: #fdfdfd;
+}
+
+#dropdownbutton button{
+  color: #fdfdfd;
+}
+
+
+a #nav-link-margin {
+  margin-right: 10px;
+}
