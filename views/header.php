@@ -41,7 +41,7 @@
         <a class="nav-link" href="?page=forum">Fórum</a>
       </li>
       -->
-      <script>alert('Funcionou!');</script>
+      
     </ul>
     <ul class="nav navbar-nav navbar-right mr-5">
     <li class="nav-item">
