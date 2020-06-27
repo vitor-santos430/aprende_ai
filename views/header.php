@@ -68,6 +68,12 @@
           <li><a class="nav-link"  href="?page=login">Login <i class="fas fa-sign-in-alt"></i></a></li>
         <?php
         }
+        else
+        {
+          ?>
+            <li><a class="nav-link"  href="?page=login">Login <i class="fas fa-sign-in-alt"></i></a></li>
+          <?php
+        }
       ?>
     </ul>
 
