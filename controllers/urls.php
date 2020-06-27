@@ -87,6 +87,12 @@
           $pages = new Pages;
           $pages->ExibirTemas();
         }
+        public function ExibirAdmin()
+        {
+          require 'controllers/controllerAdmin.php';
+          $pages = new Pages;
+          $pages->exibirAdmin();
+        }
         public function exibirErro404(){
           require 'controllers/controller404.php';
           $pages = new Pages;

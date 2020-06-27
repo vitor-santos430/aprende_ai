@@ -36,6 +36,8 @@
             break;
             case 'temas': $pages->ExibirTemas();
             break;
+            case 'admin': $pages->ExibirAdmin();
+            break;
             default: $pages->exibirErro404();
             break;
         }
