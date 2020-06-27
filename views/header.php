@@ -41,14 +41,14 @@
         <a class="nav-link" href="?page=forum">Fórum</a>
       </li>
       -->
-      
+
     </ul>
     <ul class="nav navbar-nav navbar-right mr-5">
     <li class="nav-item">
       <a href="?page=sobre" class="nav-link">Equipe <i class="fas fa-users"></i></a>
     </li>
     <?php
-        if($_GET['page'] != 'EscolhaCadastro')
+        if(isset($_GET['page']) && $_GET['page'] != 'EscolhaCadastro')
         {
       ?>
       <li><a class="nav-link" id="nav-link-margin" href="?page=EscolhaCadastro">Cadastre-se <i class="fas fa-user-plus"></i> </a></li>
@@ -57,11 +57,18 @@
       ?>
 
       <?php
-        if($_GET['page'] != 'login')
+        if(isset($_GET['page']) && $_GET['page'] != 'login')
         {
       ?>
       <li><a class="nav-link"  href="?page=login">Login <i class="fas fa-sign-in-alt"></i></a></li>
       <?php
+        }
+        else
+        {
+        ?>
+          <li><a class="nav-link" id="nav-link-margin" href="?page=EscolhaCadastro">Cadastre-se <i class="fas fa-user-plus"></i> </a></li>
+          <li><a class="nav-link"  href="?page=login">Login <i class="fas fa-sign-in-alt"></i></a></li>
+        <?php
         }
       ?>
     </ul>
