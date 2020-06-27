@@ -54,16 +54,14 @@
       <li><a class="nav-link" id="nav-link-margin" href="?page=EscolhaCadastro">Cadastre-se <i class="fas fa-user-plus"></i> </a></li>
       <?php
         }
-      ?>
 
-      <?php
-        if(isset($_GET['page']) && $_GET['page'] != 'login')
+        else if(isset($_GET['page']) && $_GET['page'] != 'login')
         {
       ?>
       <li><a class="nav-link"  href="?page=login">Login <i class="fas fa-sign-in-alt"></i></a></li>
       <?php
         }
-        else
+        else if(isset($_GET['page']) && $_GET['page'] == 'home')
         {
         ?>
           <li><a class="nav-link" id="nav-link-margin" href="?page=EscolhaCadastro">Cadastre-se <i class="fas fa-user-plus"></i> </a></li>
