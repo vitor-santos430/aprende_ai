@@ -36,13 +36,13 @@
       <h4 class="nav-item active ml-5">
         <a class="nav-link" href="?page=home">Aprende Ai!</a>
       </h4>
-      <!--  
+      <!--
       <li class="nav-item">
         <a class="nav-link" href="?page=forum">Fórum</a>
       </li>
       -->
-      
-    </ul>  
+      <script>alert('Funcionou!');</script>
+    </ul>
     <ul class="nav navbar-nav navbar-right mr-5">
     <li class="nav-item">
       <a href="?page=sobre" class="nav-link">Equipe <i class="fas fa-users"></i></a>
@@ -55,7 +55,7 @@
       <?php
         }
       ?>
-      
+
       <?php
         if($_GET['page'] != 'login')
         {
@@ -68,4 +68,3 @@
 
   </div>
 </nav>
-
