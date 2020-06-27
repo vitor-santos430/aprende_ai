@@ -1,3 +1,5 @@
+-- teste
+
 drop database if exists tcc_bd;
 create database tcc_bd;
 use tcc_bd;
