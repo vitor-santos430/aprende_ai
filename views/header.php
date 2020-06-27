@@ -48,32 +48,21 @@
       <a href="?page=sobre" class="nav-link">Equipe <i class="fas fa-users"></i></a>
     </li>
     <?php
+        if(!isset($_GET['page']))
+        {
+          echo "<script>window.location.href = '?page=home';</script>";
+        }
+
         if(isset($_GET['page']) && $_GET['page'] != 'EscolhaCadastro')
         {
-      ?>
-      <li><a class="nav-link" id="nav-link-margin" href="?page=EscolhaCadastro">Cadastre-se <i class="fas fa-user-plus"></i> </a></li>
-      <?php
+          echo '<li><a class="nav-link" id="nav-link-margin" href="?page=EscolhaCadastro">Cadastre-se <i class="fas fa-user-plus"></i> </a></li>';
         }
 
         if(isset($_GET['page']) && $_GET['page'] != 'login')
         {
-      ?>
-      <li><a class="nav-link"  href="?page=login">Login <i class="fas fa-sign-in-alt"></i></a></li>
-      <?php
+          echo '<li><a class="nav-link"  href="?page=login">Login <i class="fas fa-sign-in-alt"></i></a></li>';
         }
-        else if(isset($_GET['page']) && $_GET['page'] == 'home')
-        {
-        ?>
-          <li><a class="nav-link" id="nav-link-margin" href="?page=EscolhaCadastro">Cadastre-se <i class="fas fa-user-plus"></i> </a></li>
-          <li><a class="nav-link"  href="?page=login">Login <i class="fas fa-sign-in-alt"></i></a></li>
-        <?php
-        }
-        else
-        {
-          ?>
-            <li><a class="nav-link"  href="?page=login">Login <i class="fas fa-sign-in-alt"></i></a></li>
-          <?php
-        }
+
       ?>
     </ul>
 
