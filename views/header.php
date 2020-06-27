@@ -55,7 +55,7 @@
       <?php
         }
 
-        else if(isset($_GET['page']) && $_GET['page'] != 'login')
+        if(isset($_GET['page']) && $_GET['page'] != 'login')
         {
       ?>
       <li><a class="nav-link"  href="?page=login">Login <i class="fas fa-sign-in-alt"></i></a></li>
