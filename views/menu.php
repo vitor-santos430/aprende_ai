@@ -6,7 +6,7 @@
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  top: 25px; /* Stay at the top */
   left: 0;
   background-color: #111; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
@@ -90,13 +90,13 @@
 
     <li><span class="link" onclick="openNav()">Menu</span></li>
     <span class="text-light">|</span>
-   
+
   </ul>
 </nav>
 
 <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
 <div id="main">
-    
+
 </div>
 
 <script type="text/javascript">
