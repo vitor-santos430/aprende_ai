@@ -8,7 +8,7 @@
             require 'views/header_logado.php';
           }
 
-            echo "ERROR 404";
+            require 'views/erro_404.php';
             require 'views/footer.php';
         }
     }
