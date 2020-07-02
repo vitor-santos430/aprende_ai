@@ -9,7 +9,7 @@
                           <input type="text" class="form-control col-9 ml-5" placeholder="Usuário" name="usuario">
                         </div>
                         <div class="form-group ml-5 pl-5">
-                          <input type="password" class="form-control col-9 ml-5" placeholder="Senha" name="senh">
+                          <input type="password" class="form-control col-9 ml-5" placeholder="Senha" name="senha">
                         </div>
                         <button type="submit" class="btn btn-primary" name="btn_enviar">Validar</button>
                     </div>
