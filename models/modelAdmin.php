@@ -11,9 +11,11 @@ class ModelAdmin
 
         $executeQuery = mysqli_query($con,$comando);
 
-        if(mysqli_fetch_assoc($executeQuery))
+        if($dados = mysqli_fetch_assoc($executeQuery))
         {
-            echo "OK";
+            $id = $dados['id_admin'];
+            $_SESSION['admin_logado'] = $id;
+            echo "<script>window.location.href = '?page=painelAdmin';</script>";
         }
         else
         {

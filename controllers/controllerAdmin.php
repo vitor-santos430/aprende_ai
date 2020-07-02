@@ -20,5 +20,10 @@
 
         require './views/footer.php';
     }
+    public function exibirPainel()
+    {
+      require './views/painelAdmin.php';
+    }
+
   }
 ?>

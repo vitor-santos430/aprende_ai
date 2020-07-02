@@ -38,6 +38,8 @@
             break;
             case 'admin': $pages->ExibirAdmin();
             break;
+            case 'painelAdmin': $pages->ExibePainelAdmin();
+            break;
             default: $pages->exibirErro404();
             break;
         }

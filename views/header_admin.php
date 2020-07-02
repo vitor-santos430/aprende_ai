@@ -1,6 +1,6 @@
 <?php
-  if(isset($_SESSION['usuario_logado'])){
-    unset($_SESSION['usuario_logado']);
+  if(isset($_SESSION['admin_logado'])){
+    unset($_SESSION['admin_logado']);
   }
 ?>
 <!DOCTYPE html>
