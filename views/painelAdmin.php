@@ -72,19 +72,19 @@
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="#">
+            <a class="nav-link active" href="?page=painelAdmin&type=usuarios">
               <span data-feather="home"></span>
               Usuarios <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="?page=painelAdmin&type=pedidos">
               <span data-feather="file"></span>
               Pedidos
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="?page=painelAdmin&type=conteudos">
               <span data-feather="shopping-cart"></span>
               Conteúdos
             </a>
@@ -100,13 +100,13 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="?page=painelAdmin&type=anuncios">
               <span data-feather="file-text"></span>
               Anúncios
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="?page=painelAdmin&type=seguranca">
               <span data-feather="file-text"></span>
               Segurança
             </a>
@@ -118,7 +118,33 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
         <div class="container">
-            <p class="mt-5">Aqui vai o conteudo</p>
+            <h2 class='mt-4'><?= $titulo; ?></h2>
+            <?php
+              if($_GET['type'] == 'usuarios')
+              {
+                
+              }
+              else if($_GET['type'] == 'pedidos')
+              {
+
+              }
+              else if($_GET['type'] == 'conteudos')
+              {
+
+              }
+              else if($_GET['type'] == 'usuarios')
+              {
+
+              }
+              else if($_GET['type'] == 'anuncios')
+              {
+
+              }
+              else
+              {
+
+              }
+            ?>
         </div>
     </main>
   </div>

@@ -22,7 +22,11 @@
     }
     public function exibirPainel()
     {
+      require './models/ModelAdmin.php';
+      $dadosAdmin = new ModelAdmin;
+      $titulo = 'Teste';
       require './views/painelAdmin.php';
+
     }
 
   }
