@@ -24,7 +24,33 @@
     {
       require './models/ModelAdmin.php';
       $dadosAdmin = new ModelAdmin;
-      $titulo = 'Teste';
+
+        $_GET['type'] = isset($_GET['type'])?$_GET['type']:'';
+        if($_GET['type'] == 'usuarios')
+        {
+          $titulo = 'Usuários';
+        }
+        else if($_GET['type'] == 'pedidos')
+        {
+          $titulo = 'Pedidos';
+        }
+        else if($_GET['type'] == 'conteudos')
+        {
+          $titulo = 'Conteúdos';
+        }
+        else if($_GET['type'] == 'anuncios')
+        {
+          $titulo = 'Anúncios';
+        }
+        else if($_GET['type'] == 'seguranca')
+        {
+          $titulo = 'Segurança';
+        }
+        else
+        {
+          $titulo = 'Bem-Vindo!';
+        }
+
       require './views/painelAdmin.php';
 
     }

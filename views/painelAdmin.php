@@ -76,19 +76,19 @@
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="?page=painelAdmin&type=usuarios">
+            <a class="nav-link <?= $_GET['type'] == 'usuarios'?'active':''; ?>" href="?page=painelAdmin&type=usuarios">
               <span data-feather="home"></span>
               Usuarios <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?page=painelAdmin&type=pedidos">
+            <a class="nav-link <?= $_GET['type'] == 'pedidos'?'active':''; ?>" href="?page=painelAdmin&type=pedidos">
               <span data-feather="file"></span>
               Pedidos
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?page=painelAdmin&type=conteudos">
+            <a class="nav-link <?= $_GET['type'] == 'conteudos'?'active':''; ?>" href="?page=painelAdmin&type=conteudos">
               <span data-feather="shopping-cart"></span>
               Conteúdos
             </a>
@@ -104,13 +104,13 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link" href="?page=painelAdmin&type=anuncios">
+            <a class="nav-link <?= $_GET['type'] == 'anuncios'?'active':''; ?>" href="?page=painelAdmin&type=anuncios">
               <span data-feather="file-text"></span>
               Anúncios
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?page=painelAdmin&type=seguranca">
+            <a class="nav-link <?= $_GET['type'] == 'seguranca'?'active':''; ?>" href="?page=painelAdmin&type=seguranca">
               <span data-feather="file-text"></span>
               Segurança
             </a>
@@ -143,12 +143,18 @@
                         <th scope="col">#</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Sobrenome</th>
-                        <th scope="col">Nickname</th>
+                        <th scope="col">Apelido</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Permissão</th>
+                        <th scope="col">Ativo</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
@@ -158,6 +164,9 @@
                         <td>Jacob</td>
                         <td>Thornton</td>
                         <td>@fat</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
@@ -215,11 +224,11 @@
               {
 
               }
-              else if($_GET['type'] == 'usuarios')
+              else if($_GET['type'] == 'anuncios')
               {
 
               }
-              else if($_GET['type'] == 'anuncios')
+              else if($_GET['type'] == 'seguranca')
               {
 
               }
