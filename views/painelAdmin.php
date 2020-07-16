@@ -15,12 +15,12 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
-    <title>Dashboard Template · Bootstrap</title>
+    <title>ADM - Aprende Aí</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
 
     <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!-- Favicons -->
     <!-- <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -30,6 +30,7 @@
     <link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
     <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
     <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml"> -->
+
 <meta name="theme-color" content="#563d7c">
 
 
@@ -53,6 +54,9 @@
     <link href="css/dashboard.css" rel="stylesheet">
   </head>
   <body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Aprende Aí! que é Batata</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -120,9 +124,88 @@
         <div class="container">
             <h2 class='mt-4'><?= $titulo; ?></h2>
             <?php
+              $_GET['type'] = isset($_GET['type'])?$_GET['type']:'';
               if($_GET['type'] == 'usuarios')
               {
-                
+                ?>
+                <p>
+
+                <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">Pessoa Física</button>
+                <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Pessoa Jurídica</button>
+
+              </p>
+              <div >
+                <div class="col">
+                  <div class="collapse multi-collapse" id="multiCollapseExample1">
+                    <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Sobrenome</th>
+                        <th scope="col">Nickname</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="collapse multi-collapse" id="multiCollapseExample2">
+                    <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Primeiro</th>
+                        <th scope="col">Último</th>
+                        <th scope="col">Nickname</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </div>
+                </div>
+              </div>
+
+                <?php
               }
               else if($_GET['type'] == 'pedidos')
               {
