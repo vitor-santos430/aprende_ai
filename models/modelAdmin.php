@@ -24,6 +24,31 @@ class ModelAdmin
 
         mysqli_close($con);
     }
+    public function ListaUsuarios()
+    {
+        $conect = new Conexao;
+        $con = $conect->Conecta();
+
+        $comando = "SELECT * FROM tb_usuario";
+        $executeQuery = mysqli_query($con, $comando);
+
+        $nomes = [];
+
+        if(mysqli_num_rows($executeQuery) != null)
+        {
+          while ($dados = mysqli_fetch_assoc($executeQuery))
+          {
+              $nomes = $dados['nome_usuario'];
+          }
+        }
+        else
+        {
+            echo 'Nenhum usuário encontrado.';
+        }
+
+        mysqli_close($con);
+        return $nomes;
+    }
 }
 
  ?>

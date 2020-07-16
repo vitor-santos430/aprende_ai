@@ -29,6 +29,7 @@
         if($_GET['type'] == 'usuarios')
         {
           $titulo = 'Usuários';
+          $nomes = $dadosAdmin->ListaUsuarios();
         }
         else if($_GET['type'] == 'pedidos')
         {

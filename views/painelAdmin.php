@@ -123,6 +123,7 @@
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
         <div class="container">
             <h2 class='mt-4'><?= $titulo; ?></h2>
+
             <?php
               $_GET['type'] = isset($_GET['type'])?$_GET['type']:'';
               if($_GET['type'] == 'usuarios')
@@ -150,30 +151,24 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
+                      <?php
+                      foreach ($nomes as $nome)
+                      {
+                        ?>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td><?= $nome ?></td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                        </tr>
+                        <?php
+                      }
+
+                      ?>
+
                     </tbody>
                   </table>
                   </div>
