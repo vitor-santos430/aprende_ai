@@ -22,8 +22,8 @@
     }
     public function exibirPainel()
     {
-      require './models/ModelAdmin.php';
-      $dadosAdmin = new ModelAdmin;
+        require './models/ModelAdmin.php';
+        $dadosAdmin = new ModelAdmin;
 
         $_GET['type'] = isset($_GET['type'])?$_GET['type']:'';
         if($_GET['type'] == 'usuarios')
@@ -35,6 +35,7 @@
         else if($_GET['type'] == 'pedidos')
         {
           $titulo = 'Pedidos';
+          $dadosAdmin->ListaPedidos();
         }
         else if($_GET['type'] == 'conteudos')
         {
