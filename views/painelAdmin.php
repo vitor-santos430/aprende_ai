@@ -62,7 +62,14 @@
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar" aria-label="Search">
+  <form class="w-100 ml-4 " action="" method="post">
+    <div class="row">
+      <input class="form-control form-control-dark w-50" type="text" placeholder="Buscar" aria-label="Search">
+      <button type="button" class="btn btn-outline-light " name="button">Pesquisar</button>
+    </div>
+
+  </form>
+
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       <a class="nav-link" href="?page=admin">Sair</a>
@@ -236,21 +243,40 @@
                     </div>
                   </div>
 
+
                   <div class="col-4">
                     <div class="collapse multi-collapse" id="multiCollapseExample2">
+                  <?php
+                  if($resposta != 0)
+                  {
+                  ?>
+                  <?php
+                    for($x = 0;$x < count($resposta['nomes']);$x++)
+                    {
+                  ?>
                       <div class="row pt-4">
                         <div class="card" style="width: 18rem;">
+                          <img src="views/img/img_assuntos/<?= $resposta['imgs'][$x]; ?>" class="card-img-top">
                           <div class="card-body">
-                            <h5 class="card-title">Título do card</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Subtitulo do card</h6>
-                            <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                            <h5 class="card-title"><?= $resposta['nomes'][$x]; ?></h5>
+                            <p class="card-text"><b>Matéria:</b> <?= $resposta['cursos'][$x]; ?></p>
+                            <p class="card-text"><b>Descrição:</b> <?= $resposta['descricoes'][$x]; ?></p>
                             <a href="#" class="card-link text-warning">Aceitar</a>
                             <a href="#" class="card-link text-danger">Recusar</a>
                           </div>
                         </div>
                       </div>
+
+                  <?php
+                    }
+                  }
+                  else
+                  {
+                    echo 'Nenhum pedido para postagem de conteúdo';
+                  }
+                  ?>
+                      </div>
                     </div>
-                  </div>
 
                 </div>
 

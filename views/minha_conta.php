@@ -237,12 +237,10 @@
 <form method="post" enctype="multipart/form-data">
   <div class="form-group">
       <label for="exampleInputEmail1">Poste um arquivo!!</label>
-      <input type="file" accept="*.docx | image/* | *.doc | *.pdf" name="img_Conteudo" class="form-control-file btn-danger" id="exampleFormControlFile1">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-      </div>
+      <!-- <input type="file"  name="img_Conteudo" class="form-control-file btn-danger" id="exampleFormControlFile1"> -->
+
       <div class="custom-file">
-        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+        <input type="file" class="custom-file-input" accept="*.docx | image/* | *.doc | *.pdf" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
         <label class="custom-file-label" for="inputGroupFile01">Escolher arquivo</label>
       </div>
       <small id="emailHelp" class="form-text text-muted">Poste um arquivo contendo suas qualificações para ensinar ou até mesmo um material e ganhe acesso após analíse a postar conteudo.</small>
