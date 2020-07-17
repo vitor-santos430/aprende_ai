@@ -3,22 +3,22 @@
     <link rel="stylesheet" href="./css/minha_conta.css">
 <form method="post" enctype="multipart/form-data">
 <div>
-    <img class="perfil-avatar" src="./views/img/img_usuarios/<?php echo $img;?>"> 
+    <img class="perfil-avatar" src="./views/img/img_usuarios/<?php echo $img;?>">
 <br><br>
     <div class="input-group col-5 mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
       </div>
       <div class="custom-file">
-          <input type="file" class="custom-file-input" 
-          id="img_usuario" 
+          <input type="file" class="custom-file-input"
+          id="img_usuario"
           aria-describedby="inputGroupFileAddon01"
           accept="image/*"
           name="img_perfil">
           <label class="custom-file-label" for="inputGroupFile01">Escolha sua foto de perfil</label>
       </div>
     </div>
-    
+
 </div>
 
 
@@ -47,7 +47,7 @@
   </div>
   <div class="col mb-4">
     <div class="card">
-      <img src="..." class="card-img-top" alt="..."> 
+      <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Conhecimentos Gerais</h5>
         <p class="card-text">Prévia do último conteudo vídeo sobre concurso público ou curso que se inscreveu.</p>
@@ -57,7 +57,7 @@
   -->
   <br>
 
-    <div class="formulario">    
+    <div class="formulario">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="validationDefault01">Primeiro nome</label>
@@ -80,7 +80,7 @@
               <span class="input-group-text" id="inputGroupPrepend2">@</span>
             </div>
             <input type="" class="form-control" id="validationDefaultUsername" placeholder="Usuario" name="apelido" aria-describedby="inputGroupPrepend2"  value="<?php echo "$apelido"; ?>" >
-            
+
           </div>
         </div> -->
       </div>
@@ -104,115 +104,115 @@
         <div class="form-group col-md-4">
           <label for="inputEstado">Estado</label>
           <select id="inputEstado" class="form-control" name="estado" >
-              <option value="" 
+              <option value=""
               <?php echo $estado =='...'?'selected':'';?>
               >...</option>
 
-              <option value="Acre" 
+              <option value="Acre"
               <?php echo $estado =='Acre'?'selected':'';?>
               >Acre</option>
-              
-              <option value="Alagoas" 
+
+              <option value="Alagoas"
               <?php echo $estado =='Alagoas'?'selected':'';?>
                >Alagoas</option>
-              
-               <option value="Amapá" 
+
+               <option value="Amapá"
               <?php echo $estado =='Amapá'?'selected':'';?>
               >Amapá</option>
-              
-              <option value="Amazonas" 
+
+              <option value="Amazonas"
               <?php echo $estado =='Amazonas'?'selected':'';?>
               >Amazonas</option>
-              
-              <option value="Bahia" 
+
+              <option value="Bahia"
               <?php echo $estado =='Bahia'?'selected':'';?>
               >Bahia</option>
-              
-              <option value="Ceará" 
+
+              <option value="Ceará"
               <?php echo $estado =='Ceará'?'selected':'';?>
               >Ceará</option>
-              
-              <option value="Distrito Federal" 
+
+              <option value="Distrito Federal"
               <?php echo $estado =='Distrito Federal'?'selected':'';?>
               >Distrito Federal</option>
-              
-              <option value="Espírito Santo" 
+
+              <option value="Espírito Santo"
               <?php echo $estado =='Espírito Santo'?'selected
               ':'';?>>Espírito Santo</option>
-              
-              <option value="Goiás" 
+
+              <option value="Goiás"
               <?php echo $estado =='Goiás'?'selected':'';?>
               >Goiás</option>
-              
-              <option value="Maranhão" 
+
+              <option value="Maranhão"
               <?php echo $estado =='Maranhão'?'selected':'';?>
               >Maranhão</option>
-              
-              <option value="Mato Grosso" 
+
+              <option value="Mato Grosso"
               <?php echo $estado =='Mato Grosso'?'selected':'';?>
               >Mato Grosso</option>
-              
-              <option value="Mato Grosso do Sul" 
+
+              <option value="Mato Grosso do Sul"
               <?php echo $estado =='Mato Grosso do Sul'?'selected':'';?>
               >Mato Grosso do Sul</option>
-              
-              <option value="Minas Gerais" 
+
+              <option value="Minas Gerais"
               <?php echo $estado =='Minas Gerais'?'selected':'';?>
               >Minas Gerais</option>
-              
-              <option value="Pará" 
+
+              <option value="Pará"
               <?php echo $estado =='Pará'?'selected':'';?>
               >Pará</option>
-              
-              <option value="Paraíba" 
+
+              <option value="Paraíba"
               <?php echo $estado =='Paraíba'?'selected':'';?>
               >Paraíba</option>
-              
-              <option value="Paraná" 
+
+              <option value="Paraná"
               <?php echo $estado =='Paraná'?'selected':'';?>
               >Paraná</option>
-              
-              <option value="Pernambuco" 
+
+              <option value="Pernambuco"
               <?php echo $estado =='Pernambuco'?'selected':'';?>
               >Pernambuco</option>
-              
-              <option value="Piauí" 
+
+              <option value="Piauí"
               <?php echo $estado =='Piauí'?'selected':'';?>
               >Piauí</option>
-              
-              <option value="Rio de Janeiro" 
+
+              <option value="Rio de Janeiro"
               <?php echo $estado =='Rio de Janeiro'?'selected':'';?>
               >Rio de Janeiro</option>
-              
-              <option value="Rio Grande do Norte" 
+
+              <option value="Rio Grande do Norte"
               <?php echo $estado =='Rio Grande do Norte'?'selected':'';?>
               >Rio Grande do Norte</option>
-              
-              <option value="Rio Grande do Sul" 
+
+              <option value="Rio Grande do Sul"
               <?php echo $estado =='Rio Grande do Sul'?'selected':'';?>
               >Rio Grande do Sul</option>
-              
-              <option value="Rondônia" 
+
+              <option value="Rondônia"
               <?php echo $estado =='Rondônia'?'selected':'';?>
               >Rondônia</option>
-              
-              <option value="Roraima" 
+
+              <option value="Roraima"
               <?php echo $estado =='Roraima'?'selected':'';?>
               >Roraima</option>
-              
-              <option value="Santa Catarina" 
+
+              <option value="Santa Catarina"
               <?php echo $estado =='Santa Catarina'?'selected':'';?>
               >Santa Catarina</option>
-              
-              <option value="São Paulo" 
+
+              <option value="São Paulo"
               <?php echo $estado =='São Paulo'?'selected':'';?>
               >São Paulo</option>
-              
-              <option value="Sergipe" 
+
+              <option value="Sergipe"
               <?php echo $estado =='Sergipe'?'selected':'';?>
               >Sergipe</option>
-              
-              <option value="Tocantins" 
+
+              <option value="Tocantins"
               <?php echo $estado =='Tocantins'?'selected':'';?>
               >Tocantins</option>
           </select>
@@ -230,8 +230,16 @@
         </div>
     </div>
       </div>
-      
-      <button type="submit" class="btn btn-warning" name="btn_enviar">Atualizar</button>
-      </div>
-</form>
 
+      <button type="submit" class="btn btn-warning" name="btn_enviar">Atualizar</button>
+</form>
+<br><br>
+<form method="post" enctype="multipart/form-data">
+  <div class="form-group">
+      <label for="exampleInputEmail1">Poste um arquivo!!</label>
+      <input type="file" accept="*.docx | image/* | *.doc | *.pdf" name="img_Conteudo" class="form-control-file" id="exampleFormControlFile1">
+      <small id="emailHelp" class="form-text text-muted">Poste um arquivo contendo suas qualificações para ensinar ou até mesmo um material e ganhe acesso após analíse a postar conteudo.</small>
+    </div>
+    <button type="submit" class="btn btn-warning">Postar!</button>
+  </form>
+</div>
