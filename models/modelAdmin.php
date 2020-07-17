@@ -49,7 +49,7 @@ class ModelAdmin
               $usuarios[] = $dados['apelido_usuario'];
               $emails[] = $dados['email_usuario'];
               $permissoes[] = $dados['permissao_conteudo'];
-              $ativos[] = $dados['st_ativo'];
+              $ativos[] = $dados['st_ativo']; 
           }
         }
         else

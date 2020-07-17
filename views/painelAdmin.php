@@ -161,7 +161,7 @@
                           <td><?= $dadosPF['snomes'][$x] ?></td>
                           <td><?= $dadosPF['usuarios'][$x] ?></td>
                           <td><?= $dadosPF['emails'][$x] ?></td>
-                          <td><?= $dadosPF['permissoes'][$x] ?></td>1
+                          <td><?= $dadosPF['permissoes'][$x] ?></td>
                           <td><?= $dadosPF['ativos'][$x] ?></td>
                         </tr>
                         <?php
@@ -171,6 +171,7 @@
 
                     </tbody>
                   </table>
+
                   </div>
                 </div>
                 <div class="col">
@@ -198,7 +199,7 @@
                           <td><?= $dadosPJ['snomes'][$x] ?></td>
                           <td><?= $dadosPJ['usuarios'][$x] ?></td>
                           <td><?= $dadosPJ['emails'][$x] ?></td>
-                          <td><?= $dadosPJ['permissoes'][$x] ?></td>1
+                          <td><?= $dadosPJ['permissoes'][$x] ?></td>
                           <td><?= $dadosPJ['ativos'][$x] ?></td>
                         </tr>
                         <?php
