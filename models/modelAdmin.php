@@ -2,6 +2,7 @@
 require './models/conexao.php';
 class ModelAdmin
 {
+
     public function LoginAdmin($usuario,$senha)
     {
         $conect = new Conexao;
@@ -24,21 +25,31 @@ class ModelAdmin
 
         mysqli_close($con);
     }
-    public function ListaUsuarios()
+    public function ListaUsuarios($tipo)
     {
         $conect = new Conexao;
         $con = $conect->Conecta();
 
-        $comando = "SELECT * FROM tb_usuario";
+        $comando = "SELECT * FROM tb_usuario where tipo_usuario = $tipo";
         $executeQuery = mysqli_query($con, $comando);
 
         $nomes = [];
+        $snomes = [];
+        $usuarios = [];
+        $emails = [];
+        $permissoes = [];
+        $ativos = [];
 
         if(mysqli_num_rows($executeQuery) != null)
         {
           while ($dados = mysqli_fetch_assoc($executeQuery))
           {
-              $nomes = $dados['nome_usuario'];
+              $nomes[] = $dados['nome_usuario'];
+              $snomes[] = $dados['sobrenome_usuario'];
+              $usuarios[] = $dados['apelido_usuario'];
+              $emails[] = $dados['email_usuario'];
+              $permissoes[] = $dados['permissao_conteudo'];
+              $ativos[] = $dados['st_ativo'];
           }
         }
         else
@@ -47,7 +58,14 @@ class ModelAdmin
         }
 
         mysqli_close($con);
-        return $nomes;
+        return array(
+          'nomes'=>$nomes,
+          'snomes'=>$snomes,
+          'usuarios'=>$usuarios,
+          'emails'=>$emails,
+          'permissoes'=>$permissoes,
+          'ativos'=>$ativos
+        );
     }
 }
 

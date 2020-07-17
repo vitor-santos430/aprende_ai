@@ -144,7 +144,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Sobrenome</th>
-                        <th scope="col">Apelido</th>
+                        <th scope="col">Usuário</th>
                         <th scope="col">E-mail</th>
                         <th scope="col">Permissão</th>
                         <th scope="col">Ativo</th>
@@ -152,17 +152,17 @@
                     </thead>
                     <tbody>
                       <?php
-                      foreach ($nomes as $nome)
+                      for ($x = 0;$x < count($dadosPF['nomes']);$x++)
                       {
                         ?>
                         <tr>
-                          <th scope="row">1</th>
-                          <td><?= $nome ?></td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
+                          <th scope="row"><?= $x+1 ?></th>
+                          <td><?= $dadosPF['nomes'][$x] ?></td>
+                          <td><?= $dadosPF['snomes'][$x] ?></td>
+                          <td><?= $dadosPF['usuarios'][$x] ?></td>
+                          <td><?= $dadosPF['emails'][$x] ?></td>
+                          <td><?= $dadosPF['permissoes'][$x] ?></td>1
+                          <td><?= $dadosPF['ativos'][$x] ?></td>
                         </tr>
                         <?php
                       }
@@ -179,30 +179,32 @@
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Primeiro</th>
-                        <th scope="col">Último</th>
-                        <th scope="col">Nickname</th>
+                        <th scope="col">Nome Fantasia</th>
+                        <th scope="col">Razão Social</th>
+                        <th scope="col">Usuário</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Permissão</th>
+                        <th scope="col">Ativo</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
+                      <?php
+                      for ($x = 0;$x < count($dadosPJ['nomes']);$x++)
+                      {
+                        ?>
+                        <tr>
+                          <th scope="row"><?= $x+1 ?></th>
+                          <td><?= $dadosPJ['nomes'][$x] ?></td>
+                          <td><?= $dadosPJ['snomes'][$x] ?></td>
+                          <td><?= $dadosPJ['usuarios'][$x] ?></td>
+                          <td><?= $dadosPJ['emails'][$x] ?></td>
+                          <td><?= $dadosPJ['permissoes'][$x] ?></td>1
+                          <td><?= $dadosPJ['ativos'][$x] ?></td>
+                        </tr>
+                        <?php
+                      }
+
+                      ?>
                     </tbody>
                   </table>
                   </div>

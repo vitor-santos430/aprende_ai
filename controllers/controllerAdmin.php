@@ -29,7 +29,8 @@
         if($_GET['type'] == 'usuarios')
         {
           $titulo = 'Usuários';
-          $nomes = $dadosAdmin->ListaUsuarios();
+          $dadosPF = $dadosAdmin->ListaUsuarios(1);
+          $dadosPJ = $dadosAdmin->ListaUsuarios(2);
         }
         else if($_GET['type'] == 'pedidos')
         {

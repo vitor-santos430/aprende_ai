@@ -1,6 +1,6 @@
 <?php
     require './models/conexao.php';
-    class MinhaConta{    
+    class MinhaConta{
         function TrazDados(){
             $conect = new Conexao;
             $con = $conect->Conecta();
@@ -68,8 +68,8 @@
             $executeQuery = mysqli_query($con,$comando);
 
             if(mysqli_fetch_assoc($executeQuery)){
-                                
-                $comando = "UPDATE tb_usuario set 
+
+                $comando = "UPDATE tb_usuario set
                 img_usuario = '$img',
                 nome_usuario = '$nome',
                 sobrenome_usuario = '$sobrenome',
@@ -131,8 +131,8 @@
             $executeQuery = mysqli_query($con,$comando);
 
             if(mysqli_fetch_assoc($executeQuery)){
-                                
-                $comando = "UPDATE tb_usuario set 
+
+                $comando = "UPDATE tb_usuario set
                 img_usuario = '$img',
                 nome_usuario = '$nome',
                 sobrenome_usuario = '$razaoSocial',
@@ -169,6 +169,6 @@
             }
 
             mysqli_close($con);
-        }   
+        }
     }
 ?>
