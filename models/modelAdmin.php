@@ -49,7 +49,7 @@ class ModelAdmin
               $usuarios[] = $dados['apelido_usuario'];
               $emails[] = $dados['email_usuario'];
               $permissoes[] = $dados['permissao_conteudo'];
-              $ativos[] = $dados['st_ativo']; 
+              $ativos[] = $dados['st_ativo'];
           }
         }
         else
@@ -66,6 +66,38 @@ class ModelAdmin
           'permissoes'=>$permissoes,
           'ativos'=>$ativos
         );
+    }
+    public function ListaPedidos()
+    {
+      $conect = new Conexao;
+      $con = $conect->Conecta();
+
+      $comando = "SELECT * FROM tb_assunto a
+          inner join tb_curso c on a.assunto_curso = c.id_curso
+          where st_ativo = 0";
+      $executeQuery = mysqli_query($con, $comando);
+
+      $nomes = [];
+      $descricao = [];
+      $img = [];
+      $curso = [];
+
+      if(mysqli_num_rows($executeQuery) != null)
+      {
+        while ($dados = mysqli_fetch_assoc($executeQuery))
+        {
+            $nomes[] = $dados['a.nm_assunto'];
+            $descricao[] = $dados['descricao_assunto'];
+            $img[] = $dados['img_assunto'];
+            $curso[] = $dados['c.nm_curso'];
+        }
+      }
+      else
+      {
+          echo 'Não tem nenhum pedido.';
+      }
+
+      mysqli_close($con);
     }
 }
 

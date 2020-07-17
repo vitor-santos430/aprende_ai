@@ -146,8 +146,7 @@
                         <th scope="col">Sobrenome</th>
                         <th scope="col">Usuário</th>
                         <th scope="col">E-mail</th>
-                        <th scope="col">Permissão</th>
-                        <th scope="col">Ativo</th>
+                        <th scope="col">Permissão para post</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -161,8 +160,7 @@
                           <td><?= $dadosPF['snomes'][$x] ?></td>
                           <td><?= $dadosPF['usuarios'][$x] ?></td>
                           <td><?= $dadosPF['emails'][$x] ?></td>
-                          <td><?= $dadosPF['permissoes'][$x] ?></td>
-                          <td><?= $dadosPF['ativos'][$x] ?></td>
+                          <td><?= $dadosPF['permissoes'][$x]==1?'Permitido':'Negado' ?></td>
                         </tr>
                         <?php
                       }
@@ -184,8 +182,7 @@
                         <th scope="col">Razão Social</th>
                         <th scope="col">Usuário</th>
                         <th scope="col">E-mail</th>
-                        <th scope="col">Permissão</th>
-                        <th scope="col">Ativo</th>
+                        <th scope="col">Permissão para post</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -199,8 +196,7 @@
                           <td><?= $dadosPJ['snomes'][$x] ?></td>
                           <td><?= $dadosPJ['usuarios'][$x] ?></td>
                           <td><?= $dadosPJ['emails'][$x] ?></td>
-                          <td><?= $dadosPJ['permissoes'][$x] ?></td>
-                          <td><?= $dadosPJ['ativos'][$x] ?></td>
+                          <td><?= $dadosPJ['permissoes'][$x]==1?'Permitido':'Negado' ?></td>
                         </tr>
                         <?php
                       }
@@ -216,7 +212,49 @@
               }
               else if($_GET['type'] == 'pedidos')
               {
+                ?>
+                <p>
+                  <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">Requisições de permissão</button>
+                  <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Autorização de conteúdo</button>
+                </p>
 
+
+                <div class="row">
+                  <div class="col-4">
+                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                      <div class="row pt-4">
+                        <div class="card" style="width: 18rem;">
+                          <div class="card-body">
+                            <h5 class="card-title">Título do card</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Subtitulo do card</h6>
+                            <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                            <a href="#" class="card-link text-warning">Aceitar</a>
+                            <a href="#" class="card-link text-danger">Recusar</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div class="collapse multi-collapse" id="multiCollapseExample2">
+                      <div class="row pt-4">
+                        <div class="card" style="width: 18rem;">
+                          <div class="card-body">
+                            <h5 class="card-title">Título do card</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Subtitulo do card</h6>
+                            <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                            <a href="#" class="card-link text-warning">Aceitar</a>
+                            <a href="#" class="card-link text-danger">Recusar</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <?php
               }
               else if($_GET['type'] == 'conteudos')
               {
