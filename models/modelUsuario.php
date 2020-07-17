@@ -5,7 +5,7 @@
             $conect = new Conexao;
             $con = $conect->Conecta();
 
-            $comando = "SELECT * from tb_usuario where apelido_usuario = '$usuario' and senha_usuario = '$senha' and st_ativo = 's'";
+            $comando = "SELECT * from tb_usuario where apelido_usuario = '$usuario' and BINARY senha_usuario = '$senha' and st_ativo = 's'";
 
             $executeQuery = mysqli_query($con,$comando);
 

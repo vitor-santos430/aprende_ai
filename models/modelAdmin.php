@@ -8,7 +8,7 @@ class ModelAdmin
         $conect = new Conexao;
         $con = $conect->Conecta();
 
-        $comando = "SELECT * FROM tb_administrador where usuario = '$usuario' and senha = '$senha'";
+        $comando = "SELECT * FROM tb_administrador where usuario = '$usuario' and BINARY senha = '$senha'";
 
         $executeQuery = mysqli_query($con,$comando);
 
