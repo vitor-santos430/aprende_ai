@@ -36,14 +36,10 @@
   position: fixed;
   top: 0;
   width: 100%;
-<<<<<<< HEAD
-
 }
 .py-5{
   background:#ee9a13;
   
-=======
->>>>>>> e281c6598eddb3f6d9fdf90192f02d578b0fa9c6
 }
 
 img#img_menu_sticky {
@@ -138,9 +134,11 @@ var sticky = navbar.offsetTop;
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
   if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
+    navbar.classList.add("sticky");
+    
   } else {
     navbar.classList.remove("sticky");
+    
   }
 } 
 </script>
