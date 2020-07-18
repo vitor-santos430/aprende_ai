@@ -120,9 +120,6 @@ class ModelAdmin
       }
 
 }
-    /*public function ListaPedidosPostador()
-
-    }
     public function ListaPedidosPostador()
 
     {
@@ -161,7 +158,7 @@ class ModelAdmin
         'arquivos'=>$arquivos,
         'emails'=>$emails
       );
-    }*/
+    }
 
     public function RespostaPedidoConteudo($res, $id)
     {
