@@ -27,3 +27,6 @@ a #nav-link-margin {
 nav#navbar.sticky{
   background-color: rgb(255 193 7 / 0.9) !important;
 }
+nav#navbar.sticky a:hover{
+  color: black !important;
+}
