@@ -118,8 +118,13 @@ class ModelAdmin
       if (mysqli_num_rows($executeQuery) != null) {
         return array($dados = mysqli_fetch_assoc($executeQuery));
       }
+
 }
     /*public function ListaPedidosPostador()
+
+    }
+    public function ListaPedidosPostador()
+
     {
       $conect = new Conexao;
       $con = $conect->Conecta();
@@ -184,8 +189,8 @@ class ModelAdmin
         $conect = new Conexao;
         $con = $conect->Conecta();
 
-        $comando = "UPDATE tb_assunto
-        set st_ativo = $res where id_assunto = $id";
+        $comando = "UPDATE tb_usuario
+        set permissao_conteudo = $res where id_usuario = $id";
         $executeQuery = mysqli_query($con, $comando);
 
         if($executeQuery)
