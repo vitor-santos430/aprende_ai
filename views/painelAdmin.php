@@ -327,7 +327,7 @@
                              </div>
                             <div class="tab-pane fade" id="pills-contact<?= $assunto['id_assunto'];?>" role="tabpanel" aria-labelledby="pills-contact-tab">
                               <img src="./views/img/img_assuntos/<?=$assunto['img_assunto'];?>" alt="" style="width: 500px;height:250px;"><br>
-                              Material:
+                              Materia:
                             <?= $assunto['nm_curso'];?>
                              <br> Tema:
                             <?= $assunto['nm_tema'];?><br>
