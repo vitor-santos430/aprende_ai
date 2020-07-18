@@ -169,8 +169,8 @@ class ModelAdmin
         $conect = new Conexao;
         $con = $conect->Conecta();
 
-        $comando = "UPDATE tb_assunto
-        set st_ativo = $res where id_assunto = $id";
+        $comando = "UPDATE tb_usuario
+        set permissao_conteudo = $res where id_usuario = $id";
         $executeQuery = mysqli_query($con, $comando);
 
         if($executeQuery)
