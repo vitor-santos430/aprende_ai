@@ -284,7 +284,54 @@
               }
               else if($_GET['type'] == 'conteudos')
               {
+                foreach ($dadosConteudos as $assunto) {
+                ?>
+                    <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="heading<?= $assunto['id_assunto'];?>">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse<?= $assunto['id_assunto'];?>" aria-expanded="false" aria-controls="collapse<?= $assunto['id_assunto'];?>">
+                          <?= $assunto['nm_assunto']; ?>
+                        </button>
+                      </h5>
+                    </div>
 
+                    <div id="collapse<?=$assunto['id_assunto'];?>" class="collapse" aria-labelledby="heading<?= $assunto['id_assunto'];?>" data-parent="#accordion">
+                      <div class="card-body">
+
+                          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+                            <li class="nav-item">
+                              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home<?= $assunto['id_assunto'];?>" role="tab" aria-controls="pills-home" aria-selected="true">Conteúdo</a>
+                            </li>
+
+                            <li class="nav-item">
+                              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact<?= $assunto['id_assunto'];?>" role="tab" aria-controls="pills-contact" aria-selected="false">Autorizar</a>
+                            </li>
+
+                          </ul>
+
+                          <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home<?= $assunto['id_assunto'];?>" role="tabpanel" aria-labelledby="pills-home-tab">
+                            <?= $assunto['conteudo_assunto'];?>
+                             </div>
+                            <div class="tab-pane fade" id="pills-contact<?= $assunto['id_assunto'];?>" role="tabpanel" aria-labelledby="pills-contact-tab">Material:
+                            <?= $assunto['nm_curso'];?>
+                             <br> Tema:
+                            <?= $assunto['nm_tema'];?><br>
+                            descrição:
+                            <?=$assunto['descricao_assunto'] ?><br>
+                            <button type="button" name="button">Autorizar</button>
+                            <button type="button" name="button">Recusar</button>
+                            </div>
+                          </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <?php
+                  }
               }
               else if($_GET['type'] == 'anuncios')
               {
@@ -298,7 +345,9 @@
               {
 
               }
-            ?>
+
+               ?>
+
         </div>
     </main>
   </div>

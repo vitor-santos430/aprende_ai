@@ -40,6 +40,7 @@
         else if($_GET['type'] == 'conteudos')
         {
           $titulo = 'Conteúdos';
+          $dadosConteudos = $dadosAdmin->ListarAssuntos();
         }
         else if($_GET['type'] == 'anuncios')
         {
