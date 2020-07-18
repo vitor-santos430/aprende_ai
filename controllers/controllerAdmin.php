@@ -35,7 +35,24 @@
         else if($_GET['type'] == 'pedidos')
         {
           $titulo = 'Pedidos';
-          $resposta = $dadosAdmin->ListaPedidos();
+          $respostaConteudos = $dadosAdmin->ListaPedidosConteudos();
+          $respostaPostador = $dadosAdmin->ListaPedidosPostador();
+
+          $content = isset($_GET['content'])?$_GET['content']:'';
+          $id = isset($_GET['id'])?$_GET['id']:'';
+
+          if($content == 'aceitar')
+          {
+            $dadosAdmin->RespostaPedidoConteudo(1,$id);
+          }
+          else if($content == 'negar')
+          {
+            $dadosAdmin->RespostaPedidoConteudo(0,$id);
+          }
+
+
+          
+
         }
         else if($_GET['type'] == 'conteudos')
         {
