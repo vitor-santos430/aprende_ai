@@ -239,11 +239,11 @@
                     <div class="col-3 mx-4">
                       <div class="card" style="width: 18rem;">
                         <div class="card-body">
-                          <h5 class="card-title">Título do card</h5>
-                          <h6 class="card-subtitle mb-2 text-muted">Subtitulo do card</h6>
-                          <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-                          <a href="#" class="card-link text-warning">Aceitar</a>
-                          <a href="#" class="card-link text-danger">Recusar</a>
+                          <h5 class="card-title"><?= $respostaPostador['nomes'][$x].' '.$respostaPostador['sobrenomes'][$x] ?></h5>
+                          <h6 class="card-subtitle mb-2 text-muted"> <a href="mailto: <?=$respostaPostador['emails'][$x]?>"> <?= $respostaPostador['emails'][$x] ?></a></h6>
+                          <p class="card-text"> <a target="_blank" href="views/Docs_permissao/<?= $respostaPostador['arquivos'][$x] ?>">Currículo</a> </p>
+                          <a href="?page=painelAdmin&type=pedidos&posted=aceitar&id=<?= $respostaPostador['ids'][$x]; ?>" class="card-link text-warning">Aceitar</a>
+                          <a href="?page=painelAdmin&type=pedidos&posted=negar&id=<?= $respostaPostador['ids'][$x]; ?>" class="card-link text-danger">Recusar</a>
                         </div>
                       </div>
                     </div>

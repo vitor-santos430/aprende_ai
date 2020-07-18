@@ -77,11 +77,6 @@ class ModelAdmin
           where st_ativo = 0";
       $executeQuery = mysqli_query($con, $comando);
 
-      $nomes = [];
-      $descricao = [];
-      $img = [];
-      $curso = [];
-
       if(mysqli_num_rows($executeQuery) != null)
       {
         while ($dados = mysqli_fetch_assoc($executeQuery))
@@ -114,23 +109,22 @@ class ModelAdmin
       $conect = new Conexao;
       $con = $conect->Conecta();
 
-      $comando = "SELECT * FROM tb_usuario";
-      $executeQuery = mysqli_query($con, $comando);
+      $comando = "SELECT * FROM tb_usuario
+      where Arquivo_permissao is not Null
+      and Arquivo_permissao <> ''
+      and permissao_conteudo = 0";
 
-      $nomes = [];
-      $descricao = [];
-      $img = [];
-      $curso = [];
+      $executeQuery = mysqli_query($con, $comando);
 
       if(mysqli_num_rows($executeQuery) != null)
       {
         while ($dados = mysqli_fetch_assoc($executeQuery))
         {
-            $ids[] = $dados['id_assunto'];
-            $nomes[] = $dados['nm_assunto'];
-            $descricao[] = $dados['descricao_assunto'];
-            $img[] = $dados['img_assunto'];
-            $curso[] = $dados['nm_curso'];
+            $ids[] = $dados['id_usuario'];
+            $nomes[] = $dados['nome_usuario'];
+            $sobrenomes[] = $dados['sobrenome_usuario'];
+            $arquivos[] = $dados['Arquivo_permissao'];
+            $emails[] = $dados['email_usuario'];
         }
       }
       else
@@ -143,9 +137,9 @@ class ModelAdmin
       return array(
         'ids'=>$ids,
         'nomes'=>$nomes,
-        'descricoes'=>$descricao,
-        'imgs'=>$img,
-        'cursos'=>$curso
+        'sobrenomes'=>$sobrenomes,
+        'arquivos'=>$arquivos,
+        'emails'=>$emails
       );
     }
 
