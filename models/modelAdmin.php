@@ -118,8 +118,8 @@ class ModelAdmin
       if (mysqli_num_rows($executeQuery) != null) {
         return array($dados = mysqli_fetch_assoc($executeQuery));
       }
-
-    public function ListaPedidosPostador()
+}
+    /*public function ListaPedidosPostador()
     {
       $conect = new Conexao;
       $con = $conect->Conecta();
@@ -156,7 +156,7 @@ class ModelAdmin
         'arquivos'=>$arquivos,
         'emails'=>$emails
       );
-    }
+    }*/
 
     public function RespostaPedidoConteudo($res, $id)
     {
