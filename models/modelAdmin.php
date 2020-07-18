@@ -109,7 +109,68 @@ class ModelAdmin
       );
     }
 
+    public function ListaPedidosPostador()
+    {
+      $conect = new Conexao;
+      $con = $conect->Conecta();
+
+      $comando = "SELECT * FROM tb_usuario";
+      $executeQuery = mysqli_query($con, $comando);
+
+      $nomes = [];
+      $descricao = [];
+      $img = [];
+      $curso = [];
+
+      if(mysqli_num_rows($executeQuery) != null)
+      {
+        while ($dados = mysqli_fetch_assoc($executeQuery))
+        {
+            $ids[] = $dados['id_assunto'];
+            $nomes[] = $dados['nm_assunto'];
+            $descricao[] = $dados['descricao_assunto'];
+            $img[] = $dados['img_assunto'];
+            $curso[] = $dados['nm_curso'];
+        }
+      }
+      else
+      {
+          mysqli_close($con);
+          return 0;
+      }
+
+      mysqli_close($con);
+      return array(
+        'ids'=>$ids,
+        'nomes'=>$nomes,
+        'descricoes'=>$descricao,
+        'imgs'=>$img,
+        'cursos'=>$curso
+      );
+    }
+
     public function RespostaPedidoConteudo($res, $id)
+    {
+        $conect = new Conexao;
+        $con = $conect->Conecta();
+
+        $comando = "UPDATE tb_assunto
+        set st_ativo = $res where id_assunto = $id";
+        $executeQuery = mysqli_query($con, $comando);
+
+        if($executeQuery)
+        {
+          header('location: ?page=painelAdmin&type=pedidos');
+        }
+        else
+        {
+          echo "<script>alert('Erro ')</script>";
+        }
+
+        mysqli_close($con);
+    }
+
+    public function RespostaPedidoPostador($res, $id)
     {
         $conect = new Conexao;
         $con = $conect->Conecta();

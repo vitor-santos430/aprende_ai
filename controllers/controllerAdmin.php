@@ -35,7 +35,8 @@
         else if($_GET['type'] == 'pedidos')
         {
           $titulo = 'Pedidos';
-          $resposta = $dadosAdmin->ListaPedidosConteudos();
+          $respostaConteudos = $dadosAdmin->ListaPedidosConteudos();
+          $respostaPostador = $dadosAdmin->ListaPedidosPostador();
 
           $content = isset($_GET['content'])?$_GET['content']:'';
           $id = isset($_GET['id'])?$_GET['id']:'';
@@ -48,6 +49,9 @@
           {
             $dadosAdmin->RespostaPedidoConteudo(0,$id);
           }
+
+
+          
 
         }
         else if($_GET['type'] == 'conteudos')
