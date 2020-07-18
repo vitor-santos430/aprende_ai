@@ -237,6 +237,7 @@
       </div>
 </form>
 <br><br>
+<div class="container">
 <?php
 
 $minhaConta = new MinhaConta;
@@ -244,9 +245,10 @@ $minhaConta = new MinhaConta;
   switch ($minhaConta->verificaPermissao()) {
     case 1: $minhaConta->RequisitarPermissao();
       ?>
+
       <form method="post" class="was-validated" enctype="multipart/form-data">
+        <p>Coloque um arquivo falando sobre você e suas experiências para analisarmos se pode postar conteúdo.</p>
         <div class="custom-file">
-          <p>Coloque um arquivo falando sobre você e suas experiências para analisarmos se pode postar conteúdo.</p>
           <input type="file" accept=".doc , .txt , .pdf" class="custom-file-input" name="txt_documento" id="validatedCustomFile" required>
           <label class="custom-file-label" for="validatedCustomFile"></label>
         </div>
@@ -266,3 +268,5 @@ $minhaConta = new MinhaConta;
 <?php
   }
        ?>
+     </div>
+</div>
