@@ -24,3 +24,6 @@
 a #nav-link-margin {
   margin-right: 10px;
 }
+nav#navbar.sticky{
+  background-color: rgb(255 193 7 / 0.9) !important;
+}
