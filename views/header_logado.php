@@ -36,7 +36,6 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: red;
 }
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */

@@ -35,6 +35,7 @@
         else if($_GET['type'] == 'pedidos')
         {
           $titulo = 'Pedidos';
+
           $respostaConteudos = $dadosAdmin->ListaPedidosConteudos();
           $respostaPostador = $dadosAdmin->ListaPedidosPostador();
 
@@ -62,10 +63,12 @@
           }
 
 
+          //$resposta = $dadosAdmin->ListaPedidos();
         }
         else if($_GET['type'] == 'conteudos')
         {
           $titulo = 'Conteúdos';
+          $dadosConteudos = $dadosAdmin->ListarAssuntos();
         }
         else if($_GET['type'] == 'anuncios')
         {

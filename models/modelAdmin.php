@@ -104,6 +104,21 @@ class ModelAdmin
       );
     }
 
+
+    public function ListarAssuntos(){
+      $conect = new Conexao;
+      $con = $conect->Conecta();
+
+      $comando = "SELECT id_assunto, nm_assunto, descricao_assunto, conteudo_assunto, img_assunto,st_ativo, ordem_assunto,nm_curso, nm_tema FROM tb_assunto a
+                  inner join tb_curso c on a.assunto_curso = c.id_curso
+                  inner join tb_tema t on c.tema_curso = t.id_tema
+                  where st_ativo = 0";
+      $executeQuery = mysqli_query($con, $comando);
+
+      if (mysqli_num_rows($executeQuery) != null) {
+        return array($dados = mysqli_fetch_assoc($executeQuery));
+      }
+    }
     public function ListaPedidosPostador()
     {
       $conect = new Conexao;
@@ -183,6 +198,7 @@ class ModelAdmin
         }
 
         mysqli_close($con);
+
     }
 }
 
