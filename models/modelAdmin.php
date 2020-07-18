@@ -150,8 +150,18 @@ class ModelAdmin
         $conect = new Conexao;
         $con = $conect->Conecta();
 
-        $comando = "UPDATE tb_usuario
-        set permissao_conteudo = $res where id_usuario = $id";
+        if($res != 0)
+        {
+          $comando = "UPDATE tb_usuario
+          set permissao_conteudo = $res where id_usuario = $id";
+        }
+        else
+        {
+          $comando = "UPDATE tb_usuario
+          set permissao_conteudo = $res,
+          Arquivo_permissao = Null
+          where id_usuario";
+        }
         $executeQuery = mysqli_query($con, $comando);
 
         if($executeQuery)
