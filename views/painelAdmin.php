@@ -325,7 +325,9 @@
                             <div class="tab-pane fade show active" id="pills-home<?= $assunto['id_assunto'];?>" role="tabpanel" aria-labelledby="pills-home-tab">
                             <?= $assunto['conteudo_assunto'];?>
                              </div>
-                            <div class="tab-pane fade" id="pills-contact<?= $assunto['id_assunto'];?>" role="tabpanel" aria-labelledby="pills-contact-tab">Material:
+                            <div class="tab-pane fade" id="pills-contact<?= $assunto['id_assunto'];?>" role="tabpanel" aria-labelledby="pills-contact-tab">
+                              <img src="./views/img/img_assuntos/<?=$assunto['img_assunto'];?>" alt="" style="width: 500px;height:250px;"><br>
+                              Material:
                             <?= $assunto['nm_curso'];?>
                              <br> Tema:
                             <?= $assunto['nm_tema'];?><br>
