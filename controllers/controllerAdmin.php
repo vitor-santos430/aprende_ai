@@ -40,7 +40,9 @@
           $respostaPostador = $dadosAdmin->ListaPedidosPostador();
 
           $content = isset($_GET['content'])?$_GET['content']:'';
+
           $posted = isset($_GET['posted'])?$_GET['posted']:'';
+
           $id = isset($_GET['id'])?$_GET['id']:'';
 
           if($content == 'aceitar')
@@ -51,6 +53,7 @@
           {
             $dadosAdmin->RespostaPedidoConteudo(0,$id);
           }
+
 
 
           if($posted == 'aceitar')
@@ -64,6 +67,7 @@
 
 
           //$resposta = $dadosAdmin->ListaPedidos();
+
         }
         else if($_GET['type'] == 'conteudos')
         {
