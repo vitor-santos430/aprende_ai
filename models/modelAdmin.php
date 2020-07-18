@@ -86,18 +86,25 @@ class ModelAdmin
       {
         while ($dados = mysqli_fetch_assoc($executeQuery))
         {
-            $nomes[] = $dados['a.nm_assunto'];
+            $nomes[] = $dados['nm_assunto'];
             $descricao[] = $dados['descricao_assunto'];
             $img[] = $dados['img_assunto'];
-            $curso[] = $dados['c.nm_curso'];
+            $curso[] = $dados['nm_curso'];
         }
       }
       else
       {
-          echo 'Não tem nenhum pedido.';
+          mysqli_close($con);
+          return 0;
       }
 
       mysqli_close($con);
+      return array(
+        'nomes'=>$nomes,
+        'descricoes'=>$descricao,
+        'imgs'=>$img,
+        'cursos'=>$curso
+      );
     }
 }
 

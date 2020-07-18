@@ -35,7 +35,7 @@
         else if($_GET['type'] == 'pedidos')
         {
           $titulo = 'Pedidos';
-          $dadosAdmin->ListaPedidos();
+          $resposta = $dadosAdmin->ListaPedidos();
         }
         else if($_GET['type'] == 'conteudos')
         {
@@ -54,7 +54,7 @@
           $titulo = 'Bem-Vindo!';
         }
 
-      require './views/painelAdmin.php';
+        require './views/painelAdmin.php';
 
     }
 
