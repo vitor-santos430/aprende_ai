@@ -1,7 +1,12 @@
 <head>
   <link rel="shortcut icon" href="views/img/logo_batata.png">
   <style media="screen">
-    body::-webkit-scrollbar { width:20px; background:#e3e0d6; }
+
+      ::-webkit-scrollbar { width:15px; background:#FFF;343A40; }
+      ::-webkit-scrollbar-thumb {
+        background: #ee9a13;
+      
+    }
   </style>
 </head>
 <?php
