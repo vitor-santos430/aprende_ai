@@ -227,55 +227,65 @@
 
 
                 <div class="row">
-                  <div class="col-4">
-                    <div class="collapse multi-collapse" id="multiCollapseExample1">
-                      <div class="row pt-4">
-                        <div class="card" style="width: 18rem;">
-                          <div class="card-body">
-                            <h5 class="card-title">Título do card</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Subtitulo do card</h6>
-                            <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-                            <a href="#" class="card-link text-warning">Aceitar</a>
-                            <a href="#" class="card-link text-danger">Recusar</a>
-                          </div>
+
+
+                  <div class="collapse multi-collapse" id="multiCollapseExample1">
+                  <?php
+                  if($respostaPostador != 0)
+                  {
+                    for($x = 0;$x < count($respostaPostador['nomes']);$x++)
+                    {
+                  ?>
+                    <div class="col-3 mx-4">
+                      <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title"><?= $respostaPostador['nomes'][$x].' '.$respostaPostador['sobrenomes'][$x] ?></h5>
+                          <h6 class="card-subtitle mb-2 text-muted"> <a href="mailto: <?=$respostaPostador['emails'][$x]?>"> <?= $respostaPostador['emails'][$x] ?></a></h6>
+                          <p class="card-text"> <a target="_blank" href="views/Docs_permissao/<?= $respostaPostador['arquivos'][$x] ?>">Currículo</a> </p>
+                          <a href="?page=painelAdmin&type=pedidos&posted=aceitar&id=<?= $respostaPostador['ids'][$x]; ?>" class="card-link text-warning">Aceitar</a>
+                          <a href="?page=painelAdmin&type=pedidos&posted=negar&id=<?= $respostaPostador['ids'][$x]; ?>" class="card-link text-danger">Recusar</a>
                         </div>
                       </div>
                     </div>
+                    <?php
+                      }
+                    }
+                    else
+                    {
+                        echo '<div class="mx-4">Nenhum pedido para ser postador.</div>';
+                    }
+                    ?>
                   </div>
 
-
-                  <div class="col-4">
                     <div class="collapse multi-collapse" id="multiCollapseExample2">
                   <?php
-                  if($resposta != 0)
+                  if($respostaConteudos != 0)
                   {
-                  ?>
-                  <?php
-                    for($x = 0;$x < count($resposta['nomes']);$x++)
+                    for($x = 0;$x < count($respostaConteudos['nomes']);$x++)
                     {
                   ?>
-                      <div class="row pt-4">
+                    <div class="col-3 mx-4">
+                      <!-- <div class="row py-4"> -->
                         <div class="card" style="width: 18rem;">
-                          <img src="views/img/img_assuntos/<?= $resposta['imgs'][$x]; ?>" class="card-img-top">
+                          <img src="views/img/img_assuntos/<?= $respostaConteudos['imgs'][$x]; ?>" class="card-img-top">
                           <div class="card-body">
-                            <h5 class="card-title"><?= $resposta['nomes'][$x]; ?></h5>
-                            <p class="card-text"><b>Matéria:</b> <?= $resposta['cursos'][$x]; ?></p>
-                            <p class="card-text"><b>Descrição:</b> <?= $resposta['descricoes'][$x]; ?></p>
-                            <a href="#" class="card-link text-warning">Aceitar</a>
-                            <a href="#" class="card-link text-danger">Recusar</a>
+                            <h5 class="card-title"><?= $respostaConteudos['nomes'][$x]; ?></h5>
+                            <p class="card-text"><b>Matéria:</b> <?= $respostaConteudos['cursos'][$x]; ?></p>
+                            <p class="card-text"><b>Descrição:</b> <?= $respostaConteudos['descricoes'][$x]; ?></p>
+                            <a href="?page=painelAdmin&type=pedidos&content=aceitar&id=<?= $respostaConteudos['ids'][$x]; ?>" class="card-link text-warning">Aceitar</a>
+                            <a href="?page=painelAdmin&type=pedidos&content=negar&id=<?= $respostaConteudos['ids'][$x]; ?>" class="card-link text-danger">Recusar</a>
                           </div>
                         </div>
-                      </div>
-
+                      <!-- </div> -->
+                    </div>
                   <?php
                     }
                   }
                   else
                   {
-                    echo 'Nenhum pedido para postagem de conteúdo';
+                    echo '<div class="mx-4">Nenhum pedido para postagem de conteúdo.</div>';
                   }
                   ?>
-                      </div>
                     </div>
 
                 </div>
@@ -315,7 +325,9 @@
                             <div class="tab-pane fade show active" id="pills-home<?= $assunto['id_assunto'];?>" role="tabpanel" aria-labelledby="pills-home-tab">
                             <?= $assunto['conteudo_assunto'];?>
                              </div>
-                            <div class="tab-pane fade" id="pills-contact<?= $assunto['id_assunto'];?>" role="tabpanel" aria-labelledby="pills-contact-tab">Material:
+                            <div class="tab-pane fade" id="pills-contact<?= $assunto['id_assunto'];?>" role="tabpanel" aria-labelledby="pills-contact-tab">
+                              <img src="./views/img/img_assuntos/<?=$assunto['img_assunto'];?>" alt="" style="width: 500px;height:250px;"><br>
+                              Materia:
                             <?= $assunto['nm_curso'];?>
                              <br> Tema:
                             <?= $assunto['nm_tema'];?><br>
