@@ -37,7 +37,18 @@
           $titulo = 'Pedidos';
           $resposta = $dadosAdmin->ListaPedidosConteudos();
 
-          $content = isset($_GET['content']?$_GET['content']:'';
+          $content = isset($_GET['content'])?$_GET['content']:'';
+          $id = isset($_GET['id'])?$_GET['id']:'';
+
+          if($content == 'aceitar')
+          {
+            $dadosAdmin->RespostaPedidoConteudo(1,$id);
+          }
+          else if($content == 'negar')
+          {
+            $dadosAdmin->RespostaPedidoConteudo(0,$id);
+          }
+
         }
         else if($_GET['type'] == 'conteudos')
         {

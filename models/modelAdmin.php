@@ -115,10 +115,17 @@ class ModelAdmin
         $con = $conect->Conecta();
 
         $comando = "UPDATE tb_assunto
-        set st_ativo = $res where ";
+        set st_ativo = $res where id_assunto = $id";
         $executeQuery = mysqli_query($con, $comando);
 
-        
+        if($executeQuery)
+        {
+          header('location: ?page=painelAdmin&type=pedidos');
+        }
+        else
+        {
+          echo "<script>alert('Erro ')</script>";
+        }
 
         mysqli_close($con);
     }
