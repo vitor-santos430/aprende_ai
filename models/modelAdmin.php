@@ -67,43 +67,6 @@ class ModelAdmin
           'ativos'=>$ativos
         );
     }
-    public function ListaPedidosConteudos()
-    {
-      $conect = new Conexao;
-      $con = $conect->Conecta();
-
-      $comando = "SELECT * FROM tb_assunto a
-          inner join tb_curso c on a.assunto_curso = c.id_curso
-          where st_ativo = 0";
-      $executeQuery = mysqli_query($con, $comando);
-
-      if(mysqli_num_rows($executeQuery) != null)
-      {
-        while ($dados = mysqli_fetch_assoc($executeQuery))
-        {
-            $ids[] = $dados['id_assunto'];
-            $nomes[] = $dados['nm_assunto'];
-            $descricao[] = $dados['descricao_assunto'];
-            $img[] = $dados['img_assunto'];
-            $curso[] = $dados['nm_curso'];
-        }
-      }
-      else
-      {
-          mysqli_close($con);
-          return 0;
-      }
-
-      mysqli_close($con);
-      return array(
-        'ids'=>$ids,
-        'nomes'=>$nomes,
-        'descricoes'=>$descricao,
-        'imgs'=>$img,
-        'cursos'=>$curso
-      );
-    }
-
 
     public function ListarAssuntos(){
       $conect = new Conexao;
@@ -192,7 +155,7 @@ class ModelAdmin
 
         if($executeQuery)
         {
-          header('location: ?page=painelAdmin&type=pedidos');
+          header('location: ?page=painelAdmin&type=conteudos');
         }
         else
         {

@@ -55,8 +55,8 @@
   </head>
   <body>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Aprende Aí! que é Batata</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -220,16 +220,9 @@
               else if($_GET['type'] == 'pedidos')
               {
                 ?>
-                <p>
-                  <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">Requisições de permissão</button>
-                  <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Autorização de conteúdo</button>
-                </p>
-
 
                 <div class="row">
 
-
-                  <div class="collapse multi-collapse" id="multiCollapseExample1">
                   <?php
                   if($respostaPostador != 0)
                   {
@@ -257,92 +250,66 @@
                     ?>
                   </div>
 
-                    <div class="collapse multi-collapse" id="multiCollapseExample2">
-                  <?php
-                  if($respostaConteudos != 0)
-                  {
-                    for($x = 0;$x < count($respostaConteudos['nomes']);$x++)
-                    {
-                  ?>
-                    <div class="col-3 mx-4">
-                      <!-- <div class="row py-4"> -->
-                        <div class="card" style="width: 18rem;">
-                          <img src="views/img/img_assuntos/<?= $respostaConteudos['imgs'][$x]; ?>" class="card-img-top">
-                          <div class="card-body">
-                            <h5 class="card-title"><?= $respostaConteudos['nomes'][$x]; ?></h5>
-                            <p class="card-text"><b>Matéria:</b> <?= $respostaConteudos['cursos'][$x]; ?></p>
-                            <p class="card-text"><b>Descrição:</b> <?= $respostaConteudos['descricoes'][$x]; ?></p>
-                            <a href="?page=painelAdmin&type=pedidos&content=aceitar&id=<?= $respostaConteudos['ids'][$x]; ?>" class="card-link text-warning">Aceitar</a>
-                            <a href="?page=painelAdmin&type=pedidos&content=negar&id=<?= $respostaConteudos['ids'][$x]; ?>" class="card-link text-danger">Recusar</a>
-                          </div>
-                        </div>
-                      <!-- </div> -->
-                    </div>
-                  <?php
-                    }
-                  }
-                  else
-                  {
-                    echo '<div class="mx-4">Nenhum pedido para postagem de conteúdo.</div>';
-                  }
-                  ?>
-                    </div>
-
-                </div>
-
                 <?php
               }
               else if($_GET['type'] == 'conteudos')
               {
-                foreach ($dadosConteudos as $assunto) {
-                ?>
-                    <div id="accordion">
-                <div class="card">
-                    <div class="card-header" id="heading<?= $assunto['id_assunto'];?>">
-                      <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse<?= $assunto['id_assunto'];?>" aria-expanded="false" aria-controls="collapse<?= $assunto['id_assunto'];?>">
-                          <?= $assunto['nm_assunto']; ?>
-                        </button>
-                      </h5>
-                    </div>
+                if(!is_null($dadosConteudos))
+                {
+                  foreach ($dadosConteudos as $assunto) {
+                  ?>
+                      <div id="accordion">
+                  <div class="card">
+                      <div class="card-header" id="heading<?= $assunto['id_assunto'];?>">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse<?= $assunto['id_assunto'];?>" aria-expanded="false" aria-controls="collapse<?= $assunto['id_assunto'];?>">
+                            <?= $assunto['nm_assunto']; ?>
+                          </button>
+                        </h5>
+                      </div>
 
-                    <div id="collapse<?=$assunto['id_assunto'];?>" class="collapse" aria-labelledby="heading<?= $assunto['id_assunto'];?>" data-parent="#accordion">
-                      <div class="card-body">
+                      <div id="collapse<?=$assunto['id_assunto'];?>" class="collapse" aria-labelledby="heading<?= $assunto['id_assunto'];?>" data-parent="#accordion">
+                        <div class="card-body">
 
-                          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 
-                            <li class="nav-item">
-                              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home<?= $assunto['id_assunto'];?>" role="tab" aria-controls="pills-home" aria-selected="true">Conteúdo</a>
-                            </li>
+                              <li class="nav-item">
+                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home<?= $assunto['id_assunto'];?>" role="tab" aria-controls="pills-home" aria-selected="true">Conteúdo</a>
+                              </li>
 
-                            <li class="nav-item">
-                              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact<?= $assunto['id_assunto'];?>" role="tab" aria-controls="pills-contact" aria-selected="false">Autorizar</a>
-                            </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact<?= $assunto['id_assunto'];?>" role="tab" aria-controls="pills-contact" aria-selected="false">Autorizar</a>
+                              </li>
 
-                          </ul>
+                            </ul>
 
-                          <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-home<?= $assunto['id_assunto'];?>" role="tabpanel" aria-labelledby="pills-home-tab">
-                            <?= $assunto['conteudo_assunto'];?>
-                             </div>
-                            <div class="tab-pane fade" id="pills-contact<?= $assunto['id_assunto'];?>" role="tabpanel" aria-labelledby="pills-contact-tab">
-                              <img src="./views/img/img_assuntos/<?=$assunto['img_assunto'];?>" alt="" style="width: 500px;height:250px;"><br>
-                              Materia:
-                            <?= $assunto['nm_curso'];?>
-                             <br> Tema:
-                            <?= $assunto['nm_tema'];?><br>
-                            descrição:
-                            <?=$assunto['descricao_assunto'] ?><br>
-                            <button type="button" name="button">Autorizar</button>
-                            <button type="button" name="button">Recusar</button>
+                            <div class="tab-content" id="pills-tabContent">
+                              <div class="tab-pane fade show active" id="pills-home<?= $assunto['id_assunto'];?>" role="tabpanel" aria-labelledby="pills-home-tab">
+                              <?= $assunto['conteudo_assunto'];?>
+                               </div>
+                              <div class="tab-pane fade" id="pills-contact<?= $assunto['id_assunto'];?>" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                <img src="./views/img/img_assuntos/<?=$assunto['img_assunto'];?>" alt="" style="width: 500px;height:250px;"><br>
+                                Materia:
+                              <?= $assunto['nm_curso'];?>
+                               <br> Tema:
+                              <?= $assunto['nm_tema'];?><br>
+                              descrição:
+                              <?=$assunto['descricao_assunto'] ?><br>
+                              <a href="?page=painelAdmin&type=conteudos&content=aceitar&id=<?= $assunto['id_assunto']?>" class="btn btn-warning">Autorizar</a>
+                              <a href="?page=painelAdmin&type=conteudos&content=negar&id=<?= $assunto['id_assunto']?>" class="btn btn-danger">Recusar</a>
+                              </div>
                             </div>
-                          </div>
 
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  </div>
-                  <?php
+                    </div>
+                    <?php
+                    }
+                  }
+                  else
+                  {
+                    echo '<div class="mx-4">Nenhum pedido de postagem de conteúdo.</div>';
                   }
               }
               else if($_GET['type'] == 'anuncios')

@@ -11,8 +11,8 @@
         <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
       </div>
       <div class="custom-file">
-          <input type="file" class="custom-file-input" 
-          id="inputGroupFile01" 
+          <input type="file" class="custom-file-input"
+          id="inputGroupFile01"
           aria-describedby="inputGroupFileAddon01"
           accept="image/*"
           name="img_perfil">
@@ -49,7 +49,7 @@
   </div>
   <div class="col mb-4">
     <div class="card">
-      <img src="..." class="card-img-top" alt="..."> 
+      <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Conhecimentos Gerais</h5>
         <p class="card-text">Prévia do último conteudo vídeo sobre concurso público ou curso que se inscreveu.</p>
@@ -59,7 +59,7 @@
   -->
   <br>
 
-    <div class="formulario">    
+    <div class="formulario">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="validationDefault01">Nome Fantasia</label>
@@ -82,7 +82,7 @@
               <span class="input-group-text" id="inputGroupPrepend2">@</span>
             </div>
             <input type="" class="form-control" id="validationDefaultUsername" placeholder="Usuario" name="apelido" aria-describedby="inputGroupPrepend2"  value="<?php echo "$apelido"; ?>" >
-            
+
           </div>
         </div> -->
       </div>
@@ -106,115 +106,115 @@
         <div class="form-group col-md-4">
           <label for="inputEstado">Estado</label>
           <select id="inputEstado" class="form-control" name="estado" >
-              <option value="" 
+              <option value=""
               <?php echo $estado =='...'?'selected':'';?>
               >...</option>
 
-              <option value="Acre" 
+              <option value="Acre"
               <?php echo $estado =='Acre'?'selected':'';?>
               >Acre</option>
-              
-              <option value="Alagoas" 
+
+              <option value="Alagoas"
               <?php echo $estado =='Alagoas'?'selected':'';?>
                >Alagoas</option>
-              
-               <option value="Amapá" 
+
+               <option value="Amapá"
               <?php echo $estado =='Amapá'?'selected':'';?>
               >Amapá</option>
-              
-              <option value="Amazonas" 
+
+              <option value="Amazonas"
               <?php echo $estado =='Amazonas'?'selected':'';?>
               >Amazonas</option>
-              
-              <option value="Bahia" 
+
+              <option value="Bahia"
               <?php echo $estado =='Bahia'?'selected':'';?>
               >Bahia</option>
-              
-              <option value="Ceará" 
+
+              <option value="Ceará"
               <?php echo $estado =='Ceará'?'selected':'';?>
               >Ceará</option>
-              
-              <option value="Distrito Federal" 
+
+              <option value="Distrito Federal"
               <?php echo $estado =='Distrito Federal'?'selected':'';?>
               >Distrito Federal</option>
-              
-              <option value="Espírito Santo" 
+
+              <option value="Espírito Santo"
               <?php echo $estado =='Espírito Santo'?'selected
               ':'';?>>Espírito Santo</option>
-              
-              <option value="Goiás" 
+
+              <option value="Goiás"
               <?php echo $estado =='Goiás'?'selected':'';?>
               >Goiás</option>
-              
-              <option value="Maranhão" 
+
+              <option value="Maranhão"
               <?php echo $estado =='Maranhão'?'selected':'';?>
               >Maranhão</option>
-              
-              <option value="Mato Grosso" 
+
+              <option value="Mato Grosso"
               <?php echo $estado =='Mato Grosso'?'selected':'';?>
               >Mato Grosso</option>
-              
-              <option value="Mato Grosso do Sul" 
+
+              <option value="Mato Grosso do Sul"
               <?php echo $estado =='Mato Grosso do Sul'?'selected':'';?>
               >Mato Grosso do Sul</option>
-              
-              <option value="Minas Gerais" 
+
+              <option value="Minas Gerais"
               <?php echo $estado =='Minas Gerais'?'selected':'';?>
               >Minas Gerais</option>
-              
-              <option value="Pará" 
+
+              <option value="Pará"
               <?php echo $estado =='Pará'?'selected':'';?>
               >Pará</option>
-              
-              <option value="Paraíba" 
+
+              <option value="Paraíba"
               <?php echo $estado =='Paraíba'?'selected':'';?>
               >Paraíba</option>
-              
-              <option value="Paraná" 
+
+              <option value="Paraná"
               <?php echo $estado =='Paraná'?'selected':'';?>
               >Paraná</option>
-              
-              <option value="Pernambuco" 
+
+              <option value="Pernambuco"
               <?php echo $estado =='Pernambuco'?'selected':'';?>
               >Pernambuco</option>
-              
-              <option value="Piauí" 
+
+              <option value="Piauí"
               <?php echo $estado =='Piauí'?'selected':'';?>
               >Piauí</option>
-              
-              <option value="Rio de Janeiro" 
+
+              <option value="Rio de Janeiro"
               <?php echo $estado =='Rio de Janeiro'?'selected':'';?>
               >Rio de Janeiro</option>
-              
-              <option value="Rio Grande do Norte" 
+
+              <option value="Rio Grande do Norte"
               <?php echo $estado =='Rio Grande do Norte'?'selected':'';?>
               >Rio Grande do Norte</option>
-              
-              <option value="Rio Grande do Sul" 
+
+              <option value="Rio Grande do Sul"
               <?php echo $estado =='Rio Grande do Sul'?'selected':'';?>
               >Rio Grande do Sul</option>
-              
-              <option value="Rondônia" 
+
+              <option value="Rondônia"
               <?php echo $estado =='Rondônia'?'selected':'';?>
               >Rondônia</option>
-              
-              <option value="Roraima" 
+
+              <option value="Roraima"
               <?php echo $estado =='Roraima'?'selected':'';?>
               >Roraima</option>
-              
-              <option value="Santa Catarina" 
+
+              <option value="Santa Catarina"
               <?php echo $estado =='Santa Catarina'?'selected':'';?>
               >Santa Catarina</option>
-              
-              <option value="São Paulo" 
+
+              <option value="São Paulo"
               <?php echo $estado =='São Paulo'?'selected':'';?>
               >São Paulo</option>
-              
-              <option value="Sergipe" 
+
+              <option value="Sergipe"
               <?php echo $estado =='Sergipe'?'selected':'';?>
               >Sergipe</option>
-              
-              <option value="Tocantins" 
+
+              <option value="Tocantins"
               <?php echo $estado =='Tocantins'?'selected':'';?>
               >Tocantins</option>
           </select>
@@ -232,8 +232,37 @@
         </div>
     </div>
       </div>
-      
+
       <button type="submit" class="btn btn-warning" name="btn_enviar">Atualizar</button>
       </div>
 </form>
+<br><br>
+<?php
 
+$minhaConta = new MinhaConta;
+
+  switch ($minhaConta->verificaPermissao()) {
+    case 1: $minhaConta->RequisitarPermissao();
+      ?>
+      <form method="post" class="was-validated" enctype="multipart/form-data">
+        <div class="custom-file">
+          <p>Coloque um arquivo falando sobre você e suas experiências para analisarmos se pode postar conteúdo.</p>
+          <input type="file" accept=".doc , .txt , .pdf" class="custom-file-input" name="txt_documento" id="validatedCustomFile" required>
+          <label class="custom-file-label" for="validatedCustomFile"></label>
+        </div>
+          <button type="submit" name="btn_Postar" class="btn btn-warning mt-2">Postar!</button>
+        </form>
+
+<?php
+    break;
+    case 2:
+      ?>
+      <h2 class="nome-perfil">Documento em analise</h2>
+<?php
+    break;
+    default:
+      ?>
+        <h2 class="nome-perfil">já possui Acesso a postar conteudo!</h2>
+<?php
+  }
+       ?>
