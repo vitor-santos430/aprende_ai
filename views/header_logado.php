@@ -65,7 +65,7 @@ img#img_menu_sticky {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 <div class="py-5"><center>
-    <img src="/aprende_ai_final/aprende_ai/views/img/menu-sticky.png" alt="Menu Sticky Aprende Ai!" id="img_menu_sticky">
+    <img src="./views/img/menu-sticky.png" alt="Menu Sticky Aprende Ai!" id="img_menu_sticky">
 </center></div>
 
 
