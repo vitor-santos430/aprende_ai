@@ -97,9 +97,6 @@ nav#navbar.sticky a:hover{
        <li class="nav-item">
          <a class="nav-link" href="?page=vagas">Vagas</a>
        </li>
-       <li class="nav-item">
-        <a class="nav-link" href="?page=forum">Fórum</a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="?page=forum">FAQ</a>
       </li>
