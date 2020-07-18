@@ -36,6 +36,8 @@
         {
           $titulo = 'Pedidos';
           $resposta = $dadosAdmin->ListaPedidosConteudos();
+
+          $content = isset($_GET['content']?$_GET['content']:'';
         }
         else if($_GET['type'] == 'conteudos')
         {

@@ -118,7 +118,7 @@ class ModelAdmin
         set st_ativo = $res where ";
         $executeQuery = mysqli_query($con, $comando);
 
-
+        
 
         mysqli_close($con);
     }

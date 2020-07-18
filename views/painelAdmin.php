@@ -228,9 +228,9 @@
 
                 <div class="row">
 
-                  <div class="col-4">
+                  <div class="col-3 mx-4">
                     <div class="collapse multi-collapse" id="multiCollapseExample1">
-                      <div class="row pt-4">
+
                         <div class="card" style="width: 18rem;">
                           <div class="card-body">
                             <h5 class="card-title">Título do card</h5>
@@ -240,7 +240,7 @@
                             <a href="#" class="card-link text-danger">Recusar</a>
                           </div>
                         </div>
-                      </div>
+
                     </div>
                   </div>
 
@@ -255,7 +255,7 @@
                     for($x = 0;$x < count($resposta['nomes']);$x++)
                     {
                   ?>
-                    <div class="col-4">
+                    <div class="col-3 mx-4">
                       <!-- <div class="row py-4"> -->
                         <div class="card" style="width: 18rem;">
                           <img src="views/img/img_assuntos/<?= $resposta['imgs'][$x]; ?>" class="card-img-top">
@@ -263,12 +263,11 @@
                             <h5 class="card-title"><?= $resposta['nomes'][$x]; ?></h5>
                             <p class="card-text"><b>Matéria:</b> <?= $resposta['cursos'][$x]; ?></p>
                             <p class="card-text"><b>Descrição:</b> <?= $resposta['descricoes'][$x]; ?></p>
-                            <a href="?content=aceitar&id=<?= $resposta['ids'][$x]; ?>" class="card-link text-warning">Aceitar</a>
-                            <a href="?content=negar&id=<?= $resposta['ids'][$x]; ?>" class="card-link text-danger">Recusar</a>
+                            <a href="?page=painelAdmin&type=pedidos&content=aceitar&id=<?= $resposta['ids'][$x]; ?>" class="card-link text-warning">Aceitar</a>
+                            <a href="?page=painelAdmin&type=pedidos&content=negar&id=<?= $resposta['ids'][$x]; ?>" class="card-link text-danger">Recusar</a>
                           </div>
-                        <!-- </div> -->
-                      </div>
-
+                        </div>
+                      <!-- </div> -->
                     </div>
                   <?php
                     }
