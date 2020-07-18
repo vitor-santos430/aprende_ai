@@ -227,10 +227,9 @@
 
 
                 <div class="row">
-
-                  <div class="col-3 mx-4">
+                  <div class="col-4">
                     <div class="collapse multi-collapse" id="multiCollapseExample1">
-
+                      <div class="row pt-4">
                         <div class="card" style="width: 18rem;">
                           <div class="card-body">
                             <h5 class="card-title">Título do card</h5>
@@ -240,12 +239,12 @@
                             <a href="#" class="card-link text-danger">Recusar</a>
                           </div>
                         </div>
-
+                      </div>
                     </div>
                   </div>
 
 
-
+                  <div class="col-4">
                     <div class="collapse multi-collapse" id="multiCollapseExample2">
                   <?php
                   if($resposta != 0)
@@ -255,20 +254,19 @@
                     for($x = 0;$x < count($resposta['nomes']);$x++)
                     {
                   ?>
-                    <div class="col-3 mx-4">
-                      <!-- <div class="row py-4"> -->
+                      <div class="row pt-4">
                         <div class="card" style="width: 18rem;">
                           <img src="views/img/img_assuntos/<?= $resposta['imgs'][$x]; ?>" class="card-img-top">
                           <div class="card-body">
                             <h5 class="card-title"><?= $resposta['nomes'][$x]; ?></h5>
                             <p class="card-text"><b>Matéria:</b> <?= $resposta['cursos'][$x]; ?></p>
                             <p class="card-text"><b>Descrição:</b> <?= $resposta['descricoes'][$x]; ?></p>
-                            <a href="?page=painelAdmin&type=pedidos&content=aceitar&id=<?= $resposta['ids'][$x]; ?>" class="card-link text-warning">Aceitar</a>
-                            <a href="?page=painelAdmin&type=pedidos&content=negar&id=<?= $resposta['ids'][$x]; ?>" class="card-link text-danger">Recusar</a>
+                            <a href="#" class="card-link text-warning">Aceitar</a>
+                            <a href="#" class="card-link text-danger">Recusar</a>
                           </div>
                         </div>
-                      <!-- </div> -->
-                    </div>
+                      </div>
+
                   <?php
                     }
                   }
@@ -277,6 +275,7 @@
                     echo 'Nenhum pedido para postagem de conteúdo';
                   }
                   ?>
+                      </div>
                     </div>
 
                 </div>
@@ -285,7 +284,54 @@
               }
               else if($_GET['type'] == 'conteudos')
               {
+                foreach ($dadosConteudos as $assunto) {
+                ?>
+                    <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="heading<?= $assunto['id_assunto'];?>">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse<?= $assunto['id_assunto'];?>" aria-expanded="false" aria-controls="collapse<?= $assunto['id_assunto'];?>">
+                          <?= $assunto['nm_assunto']; ?>
+                        </button>
+                      </h5>
+                    </div>
 
+                    <div id="collapse<?=$assunto['id_assunto'];?>" class="collapse" aria-labelledby="heading<?= $assunto['id_assunto'];?>" data-parent="#accordion">
+                      <div class="card-body">
+
+                          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+                            <li class="nav-item">
+                              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home<?= $assunto['id_assunto'];?>" role="tab" aria-controls="pills-home" aria-selected="true">Conteúdo</a>
+                            </li>
+
+                            <li class="nav-item">
+                              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact<?= $assunto['id_assunto'];?>" role="tab" aria-controls="pills-contact" aria-selected="false">Autorizar</a>
+                            </li>
+
+                          </ul>
+
+                          <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home<?= $assunto['id_assunto'];?>" role="tabpanel" aria-labelledby="pills-home-tab">
+                            <?= $assunto['conteudo_assunto'];?>
+                             </div>
+                            <div class="tab-pane fade" id="pills-contact<?= $assunto['id_assunto'];?>" role="tabpanel" aria-labelledby="pills-contact-tab">Material:
+                            <?= $assunto['nm_curso'];?>
+                             <br> Tema:
+                            <?= $assunto['nm_tema'];?><br>
+                            descrição:
+                            <?=$assunto['descricao_assunto'] ?><br>
+                            <button type="button" name="button">Autorizar</button>
+                            <button type="button" name="button">Recusar</button>
+                            </div>
+                          </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <?php
+                  }
               }
               else if($_GET['type'] == 'anuncios')
               {
@@ -299,7 +345,9 @@
               {
 
               }
-            ?>
+
+               ?>
+
         </div>
     </main>
   </div>

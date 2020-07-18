@@ -36,11 +36,14 @@
   position: fixed;
   top: 0;
   width: 100%;
+<<<<<<< HEAD
 
 }
 .py-5{
   background:#ee9a13;
   
+=======
+>>>>>>> e281c6598eddb3f6d9fdf90192f02d578b0fa9c6
 }
 
 img#img_menu_sticky {

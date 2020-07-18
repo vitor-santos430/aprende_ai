@@ -35,9 +35,12 @@
         else if($_GET['type'] == 'pedidos')
         {
           $titulo = 'Pedidos';
-          $resposta = $dadosAdmin->ListaPedidosConteudos();
+
+          $respostaConteudos = $dadosAdmin->ListaPedidosConteudos();
+          $respostaPostador = $dadosAdmin->ListaPedidosPostador();
 
           $content = isset($_GET['content'])?$_GET['content']:'';
+          $posted = isset($_GET['posted'])?$_GET['posted']:'';
           $id = isset($_GET['id'])?$_GET['id']:'';
 
           if($content == 'aceitar')
@@ -49,10 +52,23 @@
             $dadosAdmin->RespostaPedidoConteudo(0,$id);
           }
 
+
+          if($posted == 'aceitar')
+          {
+            $dadosAdmin->RespostaPedidoConteudo(1,$id);
+          }
+          else if($posted == 'negar')
+          {
+            $dadosAdmin->RespostaPedidoConteudo(0,$id);
+          }
+
+
+          //$resposta = $dadosAdmin->ListaPedidos();
         }
         else if($_GET['type'] == 'conteudos')
         {
           $titulo = 'Conteúdos';
+          $dadosConteudos = $dadosAdmin->ListarAssuntos();
         }
         else if($_GET['type'] == 'anuncios')
         {
