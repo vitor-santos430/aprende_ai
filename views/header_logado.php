@@ -36,9 +36,15 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: red;
+
+}
+.py-5{
+  background:#ee9a13;
+  
 }
 
+img#img_menu_sticky {
+}
 /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
 .sticky + .content {
   padding-top: 60px;
@@ -55,9 +61,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-<div class="py-5">
-    <h1 class="text-center">Aprende Aí!</h1>
-</div>
+<div class="py-5"><center>
+    <img src="/aprende_ai_final/aprende_ai/views/img/menu-sticky.png" alt="Menu Sticky Aprende Ai!" id="img_menu_sticky">
+</center></div>
 
 
 <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light"  style="z-index: 4;">

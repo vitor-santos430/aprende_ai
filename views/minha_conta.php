@@ -3,11 +3,11 @@
     <link rel="stylesheet" href="./css/minha_conta.css">
 <form method="post" enctype="multipart/form-data">
 <div>
-    <img class="perfil-avatar" src="./views/img/img_usuarios/<?php echo $img;?>">
+    <img class="perfil-avatar" src="./views/img/img_usuarios/<?php echo $img;?>" >
 <br><br>
     <div class="input-group col-5 mb-3">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+        <span class="input-group-text" id="inputGroupFileAddon01"  alt="Escolha sua foto de perfil" title="Escolha sua foto de perfil">Upload</span>
       </div>
       <div class="custom-file">
           <input type="file" class="custom-file-input"
@@ -15,7 +15,7 @@
           aria-describedby="inputGroupFileAddon01"
           accept="image/*"
           name="img_perfil">
-          <label class="custom-file-label" for="inputGroupFile01">Escolha sua foto de perfil</label>
+          <label class="custom-file-label" for="inputGroupFile01"></label>
       </div>
     </div>
 
