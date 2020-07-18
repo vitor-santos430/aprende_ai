@@ -35,7 +35,7 @@
         else if($_GET['type'] == 'pedidos')
         {
           $titulo = 'Pedidos';
-          $resposta = $dadosAdmin->ListaPedidos();
+          $resposta = $dadosAdmin->ListaPedidosConteudos();
         }
         else if($_GET['type'] == 'conteudos')
         {

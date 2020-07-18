@@ -67,7 +67,7 @@ class ModelAdmin
           'ativos'=>$ativos
         );
     }
-    public function ListaPedidos()
+    public function ListaPedidosConteudos()
     {
       $conect = new Conexao;
       $con = $conect->Conecta();
@@ -86,6 +86,7 @@ class ModelAdmin
       {
         while ($dados = mysqli_fetch_assoc($executeQuery))
         {
+            $ids[] = $dados['id_assunto'];
             $nomes[] = $dados['nm_assunto'];
             $descricao[] = $dados['descricao_assunto'];
             $img[] = $dados['img_assunto'];
@@ -100,11 +101,26 @@ class ModelAdmin
 
       mysqli_close($con);
       return array(
+        'ids'=>$ids,
         'nomes'=>$nomes,
         'descricoes'=>$descricao,
         'imgs'=>$img,
         'cursos'=>$curso
       );
+    }
+
+    public function RespostaPedidoConteudo($res, $id)
+    {
+        $conect = new Conexao;
+        $con = $conect->Conecta();
+
+        $comando = "UPDATE tb_assunto
+        set st_ativo = $res where ";
+        $executeQuery = mysqli_query($con, $comando);
+
+
+
+        mysqli_close($con);
     }
 }
 
