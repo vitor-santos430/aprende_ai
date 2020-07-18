@@ -67,7 +67,7 @@ class ModelAdmin
           'ativos'=>$ativos
         );
     }
-    public function ListaPedidos()
+    public function ListaPedidosConteudos()
     {
       $conect = new Conexao;
       $con = $conect->Conecta();
@@ -77,15 +77,11 @@ class ModelAdmin
           where st_ativo = 0";
       $executeQuery = mysqli_query($con, $comando);
 
-      $nomes = [];
-      $descricao = [];
-      $img = [];
-      $curso = [];
-
       if(mysqli_num_rows($executeQuery) != null)
       {
         while ($dados = mysqli_fetch_assoc($executeQuery))
         {
+            $ids[] = $dados['id_assunto'];
             $nomes[] = $dados['nm_assunto'];
             $descricao[] = $dados['descricao_assunto'];
             $img[] = $dados['img_assunto'];
@@ -100,12 +96,14 @@ class ModelAdmin
 
       mysqli_close($con);
       return array(
+        'ids'=>$ids,
         'nomes'=>$nomes,
         'descricoes'=>$descricao,
         'imgs'=>$img,
         'cursos'=>$curso
       );
     }
+
 
     public function ListarAssuntos(){
       $conect = new Conexao;
@@ -120,6 +118,87 @@ class ModelAdmin
       if (mysqli_num_rows($executeQuery) != null) {
         return array($dados = mysqli_fetch_assoc($executeQuery));
       }
+
+    public function ListaPedidosPostador()
+    {
+      $conect = new Conexao;
+      $con = $conect->Conecta();
+
+      $comando = "SELECT * FROM tb_usuario
+      where Arquivo_permissao is not Null
+      and Arquivo_permissao <> ''
+      and permissao_conteudo = 0";
+
+      $executeQuery = mysqli_query($con, $comando);
+
+      if(mysqli_num_rows($executeQuery) != null)
+      {
+        while ($dados = mysqli_fetch_assoc($executeQuery))
+        {
+            $ids[] = $dados['id_usuario'];
+            $nomes[] = $dados['nome_usuario'];
+            $sobrenomes[] = $dados['sobrenome_usuario'];
+            $arquivos[] = $dados['Arquivo_permissao'];
+            $emails[] = $dados['email_usuario'];
+        }
+      }
+      else
+      {
+          mysqli_close($con);
+          return 0;
+      }
+
+      mysqli_close($con);
+      return array(
+        'ids'=>$ids,
+        'nomes'=>$nomes,
+        'sobrenomes'=>$sobrenomes,
+        'arquivos'=>$arquivos,
+        'emails'=>$emails
+      );
+    }
+
+    public function RespostaPedidoConteudo($res, $id)
+    {
+        $conect = new Conexao;
+        $con = $conect->Conecta();
+
+        $comando = "UPDATE tb_assunto
+        set st_ativo = $res where id_assunto = $id";
+        $executeQuery = mysqli_query($con, $comando);
+
+        if($executeQuery)
+        {
+          header('location: ?page=painelAdmin&type=pedidos');
+        }
+        else
+        {
+          echo "<script>alert('Erro ')</script>";
+        }
+
+        mysqli_close($con);
+    }
+
+    public function RespostaPedidoPostador($res, $id)
+    {
+        $conect = new Conexao;
+        $con = $conect->Conecta();
+
+        $comando = "UPDATE tb_assunto
+        set st_ativo = $res where id_assunto = $id";
+        $executeQuery = mysqli_query($con, $comando);
+
+        if($executeQuery)
+        {
+          header('location: ?page=painelAdmin&type=pedidos');
+        }
+        else
+        {
+          echo "<script>alert('Erro ')</script>";
+        }
+
+        mysqli_close($con);
+
     }
 }
 
