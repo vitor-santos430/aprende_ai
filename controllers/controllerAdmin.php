@@ -58,11 +58,11 @@
 
           if($posted == 'aceitar')
           {
-            $dadosAdmin->RespostaPedidoConteudo(1,$id);
+            $dadosAdmin->RespostaPedidoPostador(1,$id);
           }
           else if($posted == 'negar')
           {
-            $dadosAdmin->RespostaPedidoConteudo(0,$id);
+            $dadosAdmin->RespostaPedidoPostador(0,$id);
           }
 
 
