@@ -81,6 +81,7 @@
         else if($_GET['type'] == 'seguranca')
         {
           $titulo = 'Segurança';
+          $adicionaADM = $dadosAdmin->adicionaNovoAdmin();
         }
         else
         {
