@@ -135,7 +135,7 @@ class ModelAdmin
 
         if($executeQuery)
         {
-          header('location: ?page=painelAdmin&type=pedidos');
+          header('location: ?page=painelAdmin&type=conteudos');
         }
         else
         {
@@ -156,7 +156,7 @@ class ModelAdmin
 
         if($executeQuery)
         {
-          header('location: ?page=painelAdmin&type=conteudos');
+          header('location: ?page=painelAdmin&type=pedidos');
         }
         else
         {
