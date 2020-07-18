@@ -206,7 +206,7 @@
                   $con = $conect->Conecta();
 
 
-                  $comando = "UPDATE tb_usuario SET Arquivo_permissao = '$id $ext'WHERE id_usuario = $id";
+                  $comando = "UPDATE tb_usuario SET Arquivo_permissao = '$id$ext'WHERE id_usuario = $id";
 
                   if($executeQuery = mysqli_query($con,$comando)){
                     echo " <script> alert('Solicitação realizada com sucesso!');
