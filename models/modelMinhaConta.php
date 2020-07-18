@@ -56,8 +56,7 @@
             $cidade,
             $estado,
             $cep,
-            $senha
-        ){
+            $senha){
             $id = $_SESSION['usuario_logado'] ;
 
             $conect = new Conexao;
@@ -119,8 +118,7 @@
             $cidade,
             $estado,
             $cep,
-            $senha
-        ){
+            $senha){
             $id = $_SESSION['usuario_logado'] ;
 
             $conect = new Conexao;
@@ -170,5 +168,63 @@
 
             mysqli_close($con);
         }
-    }
+
+        function verificaPermissao(){
+
+              $conect = new Conexao;
+              $con = $conect->Conecta();
+              $id = $_SESSION['usuario_logado'];
+
+              $comando = "SELECT * from tb_usuario where id_usuario = $id";
+
+              $executeQuery = mysqli_query($con,$comando);
+
+              $dados = mysqli_fetch_assoc($executeQuery);
+              //verificar se ele já possui acesso
+
+              if ($dados['Arquivo_permissao'] == "" && $dados['permissao_conteudo'] == 0){
+                return 1;
+              }
+              //verificar se ele já solicitou acesso
+              else if ($dados['Arquivo_permissao'] != "" && $dados['permissao_conteudo'] == 0) {
+                return 2;
+              }
+              else {
+                return 3;
+              }
+            }
+            function RequisitarPermissao(){
+              $id = $_SESSION['usuario_logado'];
+              //se o botão postar foi pressionado
+              if (isset($_POST['btn_Postar'])) {
+                //ele vai verificar se o upload foi realizado
+                $ext = strtolower(substr($_FILES['txt_documento']['name'],-4)); //Pegando extensão do arquivo
+                $new_name =  $id . $ext; //Definindo um novo nome para o arquivo
+                $dir = './views/Docs_Permissao/'; //Diretório para uploads
+                if(move_uploaded_file($_FILES['txt_documento']['tmp_name'], $dir.$new_name)){ //Fazer upload do arquivo
+                  $conect = new Conexao;
+                  $con = $conect->Conecta();
+
+
+                  $comando = "UPDATE tb_usuario SET Arquivo_permissao = '$id.$ext'WHERE id_usuario = $id";
+
+                  if($executeQuery = mysqli_query($con,$comando)){
+                    echo " <script> alert('Solicitação realizada com sucesso!');
+                                            window.location.href = '?page=minha_conta';
+                           </script> ";
+
+                  }
+
+
+                }
+
+                //então irá atualizar o banco
+
+
+
+
+              }
+
+        }
+  }
 ?>

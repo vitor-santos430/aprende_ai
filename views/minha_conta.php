@@ -234,19 +234,36 @@
       <button type="submit" class="btn btn-warning" name="btn_enviar">Atualizar</button>
 </form>
 <br><br>
-<form method="post" enctype="multipart/form-data">
-  <div class="form-group">
-      <label for="exampleInputEmail1">Poste um arquivo!!</label>
-      <input type="file" accept="*.docx | image/* | *.doc | *.pdf" name="img_Conteudo" class="form-control-file btn-danger" id="exampleFormControlFile1">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-      </div>
-      <div class="custom-file">
-        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-        <label class="custom-file-label" for="inputGroupFile01">Escolher arquivo</label>
-      </div>
-      <small id="emailHelp" class="form-text text-muted">Poste um arquivo contendo suas qualificações para ensinar ou até mesmo um material e ganhe acesso após analíse a postar conteudo.</small>
-    </div>
-    <button type="submit" class="btn btn-warning">Postar!</button>
-  </form>
+<?php
+
+$minhaConta = new MinhaConta;
+
+  switch ($minhaConta->verificaPermissao()) {
+    case 1: $minhaConta->RequisitarPermissao();
+      ?>
+      <form method="post" class="was-validated" enctype="multipart/form-data">
+        <div class="custom-file">
+          <input type="file" accept=".doc , .txt , .pdf" class="custom-file-input" name="txt_documento" id="validatedCustomFile" required>
+          <label class="custom-file-label" for="validatedCustomFile"></label>
+        </div>
+          <button type="submit" name="btn_Postar" class="btn btn-warning">Postar!</button>
+        </form>
+
+<?php
+    break;
+    case 2:
+      ?>
+      <h2 class="nome-perfil">Documento em analise</h2>
+<?php
+    break;
+    default:
+      ?>
+        <h2 class="nome-perfil">já possui Acesso a postar conteudo!</h2>
+<?php
+  }
+       ?>
+
+
+
+
 </div>
