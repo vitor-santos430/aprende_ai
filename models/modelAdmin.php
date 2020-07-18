@@ -81,6 +81,7 @@ class ModelAdmin
       if (mysqli_num_rows($executeQuery) != null) {
         return array($dados = mysqli_fetch_assoc($executeQuery));
       }
+      mysqli_close($con);
 
 }
     public function ListaPedidosPostador()
@@ -167,25 +168,29 @@ class ModelAdmin
     }
 
     public function adicionaNovoAdmin(){
-      $conect = new Conexao;
-      $con = $conect->Conecta();
+      if (isset($_POST['btn_adicionar'])) {
+        $conect = new Conexao;
+        $con = $conect->Conecta();
 
-      $user = $_POST['txt_usuario'];
-      $senha = $_POST['txt_senha'];
-      $perguntaDeSeguranca = $_POST['txt_pergunta_de_Seguranca'];
-      $respostaDeSeguranca = $_POST['txt_resposta_de_Seguranca'];
+        $user = $_POST['txt_usuario'];
+        $senha = $_POST['txt_senha'];
+        $perguntaDeSeguranca = $_POST['txt_pergunta_de_Seguranca'];
+        $respostaDeSeguranca = $_POST['txt_resposta_de_Seguranca'];
 
 
 
-      $comando = "INSERT INTO tb_administrador (usuario, senha, resposta_de_seguranca, pergunta_de_seguranca)
-                  VALUES('$user', '$senha','$perguntaDeSeguranca','$respostaDeSeguranca')";
+        $comando = "INSERT INTO tb_administrador (usuario, senha, resposta_de_seguranca, pergunta_de_seguranca)
+                    VALUES('$user', '$senha','$perguntaDeSeguranca','$respostaDeSeguranca')";
 
-      if ($executeQuery = mysqli_query($con,$comando)) {
-        echo "<script>alert('$user cadastrado com sucesso')</script>";
+        if ($executeQuery = mysqli_query($con,$comando)) {
+          echo "<script>alert('$user cadastrado com sucesso')</script>";
+        }
+        else {
+          echo "<script>alert('não foi possivel cadastrar o usuario $user')</script>";
+        }
+        mysqli_close($con);
       }
-      else {
-        echo "<script>alert('não foi possivel cadastrar o usuario $user')</script>";
-      }
+
     }
 }
 
