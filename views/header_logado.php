@@ -12,7 +12,7 @@
  <style>
    /* Style the navbar */
 #navbar {
-  
+
   background-color: #333;
 }
 
@@ -39,15 +39,15 @@
 }
 .py-5{
   background:#ee9a13;
-  
+
 }
 
-img#img_menu_sticky {
+nav#navbar.sticky{
+  background-color: rgb(255 193 7 / 0.9) !important;
 }
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 60px;
-} 
+nav#navbar.sticky a:hover{
+  color: black !important;
+}
   </style>
 </head>
 
@@ -135,10 +135,10 @@ var sticky = navbar.offsetTop;
 function myFunction() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky");
-    
+
   } else {
     navbar.classList.remove("sticky");
-    
+
   }
-} 
+}
 </script>
