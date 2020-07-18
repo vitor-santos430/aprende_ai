@@ -27,6 +27,18 @@ a #nav-link-margin {
 nav#navbar.sticky{
   background-color: rgb(255 193 7 / 0.9) !important;
 }
-nav#navbar.sticky a:hover{
+nav#navbar.sticky a:hover,
+nav#navbar.sticky .navbar-nav button.dropdown-item:hover{
   color: black !important;
+}
+nav#navbar.sticky .dropdown-item,
+nav#navbar.sticky .navbar-nav .dropdown-menu{
+  background-color: rgb(255 193 7 / 0.9) !important;
+}
+
+nav#navbar.sticky .dropdown-menu {
+  border: 1px solid rgb(255 193 7 / 0.15);
+}
+nav#navbar.sticky .dropdown-item:focus {
+  border: 1px solid rgb(255 193 7 / 0.15);
 }
