@@ -2,10 +2,14 @@
   <link rel="shortcut icon" href="views/img/logo_batata.png">
   <style media="screen">
 
-      ::-webkit-scrollbar { width:15px; background:#FFF;343A40; }
-      ::-webkit-scrollbar-thumb {
-        background: #ee9a13;
-      
+    ::-webkit-scrollbar { width:15px; background:#FFF;343A40; }
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg,#dc8d0d,#ffc107);
+        border-radius: 30px;
+        box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+    }
+    ::-webkit-scrollbar-track {
+        background: linear-gradient(90deg,#343a40,#201c29 1px,#100e17 0,#100e17);
     }
   </style>
 </head>

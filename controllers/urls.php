@@ -99,6 +99,11 @@
           $pages = new Pages;
           $pages->exibirPainel();
         }
+        public function Sobre(){
+            require 'controllers/controllerSobre.php';
+            $pages = new Pages;
+            $pages->Sobre();
+        }
         public function exibirErro404(){
           require 'controllers/controller404.php';
           $pages = new Pages;
