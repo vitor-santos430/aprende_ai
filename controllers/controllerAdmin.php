@@ -74,10 +74,6 @@
             $dadosAdmin->RespostaPedidoConteudo();
           }*/
         }
-        else if($_GET['type'] == 'anuncios')
-        {
-          $titulo = 'Anúncios';
-        }
         else if($_GET['type'] == 'seguranca')
         {
           $titulo = 'Segurança';
