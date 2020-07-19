@@ -44,9 +44,6 @@
 
     </ul>
     <ul class="nav navbar-nav navbar-right mr-5">
-    <li class="nav-item">
-      <a href="?page=sobre" class="nav-link">Equipe <i class="fas fa-users"></i></a>
-    </li>
     <?php
         if(!isset($_GET['page']))
         {
