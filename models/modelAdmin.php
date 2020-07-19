@@ -202,6 +202,33 @@ class ModelAdmin
       }
 
     }
-}
 
+    public function aprovaConteudo(){
+      $conect = new Conexao;
+      $con = $conect->Conecta();
+
+      if(isset($_POST['id_assunto'])){
+
+        $ativo = substr($_POST['id_assunto'],-1);
+        $id = substr($_POST['id_assunto'],0,-1);
+        $ordem = $_POST['txt_ordem_assunto'];
+
+        if($ativo == 1)
+        {
+          $comando = "CALL AtualizaOrdemAssunto($ativo, $ordem, $id);";
+
+          $executeQuery = mysqli_query($con, $comando);
+        }
+        else if($ativo == 0)
+        {
+          $comando = "CALL AtualizaOrdemAssunto($ativo, $ordem, $id);";
+
+          $executeQuery = mysqli_query($con, $comando);
+        }
+      }
+mysqli_close($con);
+
+
+    }
+}
  ?>
