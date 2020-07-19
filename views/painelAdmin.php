@@ -359,15 +359,14 @@
                   </form>
                 </div>
                 <div class="collapse multi-collapse" id="multiCollapseExample2">
-                  <form>
-
+                  <form method="post">
                     <div class="form-group">
                       <label for="exampleInputPassword1">Nova Senha</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Nova Senha" name="novaSenha">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Confirmar senha</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirmar senha"  name="confirmaSenha">
                     </div>
                     <button type="submit" class="btn btn-primary">Atualizar</button>
                   </form>
