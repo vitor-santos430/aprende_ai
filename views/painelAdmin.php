@@ -110,12 +110,7 @@
           </a>
         </h6>
         <ul class="nav flex-column mb-2">
-          <li class="nav-item">
-            <a class="nav-link <?= $_GET['type'] == 'anuncios'?'active':''; ?>" href="?page=painelAdmin&type=anuncios">
-              <span data-feather="file-text"></span>
-              Anúncios
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link <?= $_GET['type'] == 'seguranca'?'active':''; ?>" href="?page=painelAdmin&type=seguranca">
               <span data-feather="file-text"></span>
@@ -257,6 +252,8 @@
                 if(!is_null($dadosConteudos))
                 {
                   foreach ($dadosConteudos as $assunto) {
+
+
                   ?>
                       <div id="accordion">
                   <div class="card">
@@ -295,8 +292,12 @@
                               <?= $assunto['nm_tema'];?><br>
                               descrição:
                               <?=$assunto['descricao_assunto'] ?><br>
-                              <a href="?page=painelAdmin&type=conteudos&content=aceitar&id=<?= $assunto['id_assunto']?>" class="btn btn-warning">Autorizar</a>
-                              <a href="?page=painelAdmin&type=conteudos&content=negar&id=<?= $assunto['id_assunto']?>" class="btn btn-danger">Recusar</a>
+                              <form class="" method="post">
+                                <input type="number" name="txt_ordem_assunto" >
+                                <button name="id_assunto" value="<?= $assunto['id_assunto']?>1" class="btn btn-warning">Autorizar</button>
+                                <button name="id_assunto" value="<?= $assunto['id_assunto']?>0" class="btn btn-danger">Recusar</button>
+                              </form>
+
                               </div>
                             </div>
 
@@ -312,49 +313,58 @@
                     echo '<div class="mx-4">Nenhum pedido de postagem de conteúdo.</div>';
                   }
               }
-              else if($_GET['type'] == 'anuncios')
-              {
-
-              }
               else if($_GET['type'] == 'seguranca')
               {
                 ?>
-
-                <form class="needs-validation" method="post" novalidate >
-                  <div class="form-row">
-                    <div class="col-md-4 mb-3">
-                      <label for="validationTooltipUsername">Usuario</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+              <p>
+                <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">Cadastrar novo Administrador</button>
+                <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Alterar Senha</button>
+              </p>
+                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                  <form class="needs-validation" method="post" novalidate >
+                    <div class="form-row">
+                      <div class="col-md-4 mb-3">
+                        <label for="validationTooltipUsername">Usuario</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                          </div>
+                          <input type="text" name="txt_usuario" class="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" required>
                         </div>
-                        <input type="text" name="txt_usuario" class="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" required>
                       </div>
                     </div>
-                  </div>
-                  <div class="form-row">
-                    <div class="col-md-6 mb-3">
-                      <label for="validationTooltip03">Senha</label>
-                      <input type="password" name="txt_senha" class="form-control" id="validationTooltip03" placeholder="EX: P@SsW0rd" required>
+                    <div class="form-row">
+                      <div class="col-md-6 mb-3">
+                        <label for="validationTooltip03">Senha</label>
+                        <input type="password" name="txt_senha" class="form-control" id="validationTooltip03" placeholder="EX: P@SsW0rd" required>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="validationTooltip04">Pergunta de segurança</label>
+                        <input type="text" name="txt_pergunta_de_Seguranca" class="form-control" id="validationTooltip04" placeholder="EX: nome do seu pet?" required>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="validationTooltip05">Resposta de segurança</label>
+                        <input type="text" name="txt_resposta_de_Seguranca" class="form-control" id="validationTooltip05" placeholder="EX: Batatinha" required>
+                      </div>
                     </div>
-                    <div class="col-md-3 mb-3">
-                      <label for="validationTooltip04">Pergunta de segurança</label>
-                      <input type="text" name="txt_pergunta_de_Seguranca" class="form-control" id="validationTooltip04" placeholder="EX: nome do seu pet?" required>
+                      <button class="btn btn-primary" name="btn_adicionar" type="submit">Adicionar</button>
+                    </form>
+                </div>
 
+                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                  <form method="post">
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Nova Senha</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Nova Senha" name="novaSenha">
                     </div>
-                    <div class="col-md-3 mb-3">
-                      <label for="validationTooltip05">Resposta de segurança</label>
-                      <input type="text" name="txt_resposta_de_Seguranca" class="form-control" id="validationTooltip05" placeholder="EX: Batatinha" required>
-
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Confirmar senha</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirmar senha"  name="confirmaSenha">
                     </div>
-                  </div>
-                  <button class="btn btn-primary" name="btn_adicionar" type="submit">Adicionar</button>
+                  <button class="btn btn-primary" name="btn_adicionar" type="submit">Atualizar</button>
                 </form>
+              </div>
                 <?php
-              }
-              else
-              {
-
               }
 
                ?>

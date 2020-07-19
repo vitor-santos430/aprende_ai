@@ -9,7 +9,8 @@
       $con = $conect->Conecta();
       $exibeAssuntosQuery = mysqli_query($con,"SELECT *
                                                FROM tb_assunto
-                                               WHERE assunto_curso =  $id_curso AND st_ativo = 1");
+                                               WHERE assunto_curso =  $id_curso AND st_ativo = 1
+                                               order by ordem_assunto asc");
 
       $nomeConteudoQuery = mysqli_query($con,"SELECT nm_curso
                                                FROM tb_curso

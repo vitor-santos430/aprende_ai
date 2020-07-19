@@ -1,4 +1,14 @@
+<head>
+  <link rel="shortcut icon" href="views/img/logo_batata.png">
+  <style media="screen">
 
+      ::-webkit-scrollbar { width:15px; background:#FFF;343A40; }
+      ::-webkit-scrollbar-thumb {
+        background: #ee9a13;
+      
+    }
+  </style>
+</head>
 <?php
     require 'controllers/urls.php';
     session_start();

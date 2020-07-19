@@ -58,22 +58,21 @@
         {
           $titulo = 'Conteúdos';
           $dadosConteudos = $dadosAdmin->ListarAssuntos();
+            $aprovar = $dadosAdmin->aprovaConteudo() ;
 
-          $content = isset($_GET['content'])?$_GET['content']:'';
+
+
+        /*  $content = isset($_GET['content'])?$_GET['content']:'';
           $id = isset($_GET['id'])?$_GET['id']:'';
 
-          if($content == 'aceitar')
+          if($id == 1)
           {
-            $dadosAdmin->RespostaPedidoConteudo(1,$id);
+            $dadosAdmin->RespostaPedidoConteudo();
           }
-          else if($content == 'negar')
+          else if($id == 0)
           {
-            $dadosAdmin->RespostaPedidoConteudo(0,$id);
-          }
-        }
-        else if($_GET['type'] == 'anuncios')
-        {
-          $titulo = 'Anúncios';
+            $dadosAdmin->RespostaPedidoConteudo();
+          }*/
         }
         else if($_GET['type'] == 'seguranca')
         {
