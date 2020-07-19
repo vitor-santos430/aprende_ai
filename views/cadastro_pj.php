@@ -42,12 +42,11 @@
           <small id="passwordHelpInline" class="text-muted">Deve ter entre 8 e 20 caracteres.</small>
         </div>
         
-      <div class="form-inline">
         <div class="form-group col-md-6 mb-3">
             <label for="inputPassword6">Confirmar Senha</label>
             <input type="password" id="inputPassword6" class="form-control" 
             aria-describedby="passwordHelpInline" name="confirmaSenha"  placeholder="Confirmar Senha" required>
-        </div>
+        
       </div>
     </div>
       </div>
