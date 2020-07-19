@@ -1,6 +1,6 @@
 <head>
   <link rel="shortcut icon" href="views/img/logo_batata.png">
-<<<<<<< HEAD
+
   <style media="screen">
 
     ::-webkit-scrollbar { width:15px; background:#FFF;343A40; }
@@ -13,9 +13,6 @@
         background: linear-gradient(90deg,#343a40,#201c29 1px,#100e17 0,#100e17);
     }
   </style>
-=======
-  
->>>>>>> 9217740a01c222ca5508bc013ffe3eae80fed8de
 </head>
 <?php
     require 'controllers/urls.php';
