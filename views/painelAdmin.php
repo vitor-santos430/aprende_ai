@@ -110,7 +110,7 @@
           </a>
         </h6>
         <ul class="nav flex-column mb-2">
-          
+
           <li class="nav-item">
             <a class="nav-link <?= $_GET['type'] == 'seguranca'?'active':''; ?>" href="?page=painelAdmin&type=seguranca">
               <span data-feather="file-text"></span>
@@ -355,14 +355,22 @@
                   <form method="post">
                     <div class="form-group">
                       <label for="exampleInputPassword1">Nova Senha</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Nova Senha" name="novaSenha">
+                      <input type="password" class="form-control"
+                      id="exampleInputPassword1" placeholder="Nova Senha"
+                      name="novaSenha">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Confirmar senha</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirmar senha"  name="confirmaSenha">
+                      <input type="password" class="form-control"
+                      id="exampleInputPassword1" placeholder="Confirmar senha"
+                      name="confirmaSenha">
                     </div>
-                  <button class="btn btn-primary" name="btn_adicionar" type="submit">Atualizar</button>
+                  <button class="btn btn-primary" name="btn_atualizar" type="submit">Atualizar</button>
                 </form>
+
+              </div>
+              <div>
+                  <?= $res ?>
               </div>
                 <?php
               }

@@ -64,8 +64,8 @@
 <h1>Aprende Ai! Que é batata</h1>
 <b>Uma plataforma que organiza o conteúdo que você precisa estudar.</b>
 </br></br>
-<p>Somos uma plataforma com conteúdo organizado para pessoas que buscam por matérias para vestibular, 
-Enem e Conhecimento Gerais. A plataforma nasceu em uma reunião de amigos no qual um deles sentia grande 
+<p>Somos uma plataforma com conteúdo organizado para pessoas que buscam por matérias para vestibular,
+Enem e Conhecimento Gerais. A plataforma nasceu em uma reunião de amigos no qual um deles sentia grande
 dificuldade em encontrar os conteúdo para estudar de forma organizada. Então surgiu o Aprende Ai,
-está moderna plataforma que facilita a vida se pessoas que querem estudar para as provas e não sabe 
+está moderna plataforma que facilita a vida de pessoas que querem estudar para as provas e não sabe 
 por onde começar.</p>

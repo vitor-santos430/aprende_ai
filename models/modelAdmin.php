@@ -20,7 +20,7 @@ class ModelAdmin
         }
         else
         {
-          echo "<span class='text-danger'>Usuário não encontrado. <a href='?page=adminEsc'>Esqueceu sua senha?</a> </span>";
+          echo "<span class='text-danger'>Usuário ou senha inválido.  </span>";
         }
 
         mysqli_close($con);
@@ -226,9 +226,30 @@ class ModelAdmin
           $executeQuery = mysqli_query($con, $comando);
         }
       }
-mysqli_close($con);
+      mysqli_close($con);
+    }
 
+    public function AlteraSenha($senha,$id)
+    {
+      $conect = new Conexao;
+      $con = $conect->Conecta();
+
+      $comando = "UPDATE tb_administrador
+      set senha = '$senha'
+      where id_admin = $id";
+
+      if(mysqli_query($con, $comando))
+      {
+          mysqli_close($con);
+          return "<p class='text-success'>Senha alterada com sucesso.</p>";
+      }
+      else
+      {
+          mysqli_close($con);
+          return "<p class='text-danger'>Falha ao alterar senha.</p>";
+      }
 
     }
+
 }
  ?>

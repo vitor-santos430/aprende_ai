@@ -58,26 +58,32 @@
         {
           $titulo = 'Conteúdos';
           $dadosConteudos = $dadosAdmin->ListarAssuntos();
-            $aprovar = $dadosAdmin->aprovaConteudo() ;
+          $aprovar = $dadosAdmin->aprovaConteudo() ;
 
-
-
-        /*  $content = isset($_GET['content'])?$_GET['content']:'';
-          $id = isset($_GET['id'])?$_GET['id']:'';
-
-          if($id == 1)
-          {
-            $dadosAdmin->RespostaPedidoConteudo();
-          }
-          else if($id == 0)
-          {
-            $dadosAdmin->RespostaPedidoConteudo();
-          }*/
         }
         else if($_GET['type'] == 'seguranca')
         {
           $titulo = 'Segurança';
           $adicionaADM = $dadosAdmin->adicionaNovoAdmin();
+          $res = "";
+          if(isset($_POST['btn_atualizar']))
+          {
+            $id = $_SESSION['admin_logado'];
+            $senha = $_POST['novaSenha'];
+            $confirmacao = $_POST['confirmaSenha'];
+
+            if($senha == $confirmacao)
+            {
+                $res = $dadosAdmin->AlteraSenha($senha,$id);
+            }
+            else
+            {
+                echo "<script>alert('Erro ao alterar a senha')</script>";
+                $res = "<p class='text-danger'>As senhas não iguais</p>";
+            }
+
+          }
+
         }
         else
         {
@@ -87,6 +93,7 @@
         require './views/painelAdmin.php';
 
     }
+
 
   }
 ?>
