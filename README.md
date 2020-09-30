@@ -29,12 +29,19 @@ Após esses passos, vá até o final da página e clique em executar.
 
 Agora você já pode executar a plataforma
 
+# Login
+Para fazer login, na tela inicial clique em "Login", entre com usuário "teste" e senha "teste" ou você pode criar um novo usuário, clicando em "Cadastre-se", colocando seus dados, como prefirir.
+
 # Imagens do projeto
 ## tela Inicial
 <img src="https://github.com/vitor-santos430/aprende_ai/blob/master/views/img/inicio_aprende_ai.PNG">
 
+#
+
 ## Tela Pós Login
 <img src="https://github.com/vitor-santos430/aprende_ai/blob/master/views/img/por_dentro_aprende_ai.PNG">
+
+#
 
 ## Conteúdos disponiveis
 <img src="https://github.com/vitor-santos430/aprende_ai/blob/master/views/img/scroll_aprende_ai.PNG">
