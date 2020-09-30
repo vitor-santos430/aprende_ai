@@ -10,7 +10,8 @@ Para desenvolver utilizamos servidor apache com PHP 7.3 e MariaDB/ MYSQL, usando
 Link para download: https://www.apachefriends.org/pt_br/download.html
 
 Acesse o http://localhost/phpmyadmin no seu navegador, crie uma base de dados chamada tcc_bd_aprende_ai 
-Para isso clique no botão escrito novo, como na imagem a seguir:
+
+Para isso clique no botão escrito "Novo", como na imagem a seguir:
 
 
 <img src="https://github.com/vitor-santos430/aprende_ai/blob/master/views/img/como_criar_base.PNG">
